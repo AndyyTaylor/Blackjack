@@ -1,0 +1,48 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/framework/Display.h
+GL/glew.h
+-
+SDL2/SDL.h
+-
+iostream
+-
+
+../include/gamestates/GameState.h
+SDL2/SDL.h
+-
+iostream
+-
+framework/Display.h
+../include/gamestates/framework/Display.h
+
+../include/gamestates/Playing.h
+gamestates/GameState.h
+../include/gamestates/gamestates/GameState.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
+framework/Display.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Display.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
+GL/glew.h
+-
+GLUT/glut.h
+-
+gamestates/Playing.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/gamestates/Playing.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp
+iostream
+-
+framework/Display.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.h
+gamestates/Playing.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.h
+
