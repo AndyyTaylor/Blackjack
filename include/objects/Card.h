@@ -10,6 +10,8 @@ class Card : public Object {
     Card(float _x, float _y, float _z);
     
     void render();
+    void update();
+    void cleanup();
 };
 
 #endif

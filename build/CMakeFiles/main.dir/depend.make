@@ -4,13 +4,29 @@
 CMakeFiles/main.dir/src/framework/Display.cpp.o: ../include/framework/Display.h
 CMakeFiles/main.dir/src/framework/Display.cpp.o: ../src/framework/Display.cpp
 
+CMakeFiles/main.dir/src/framework/Renderer.cpp.o: ../include/framework/Renderer.h
+CMakeFiles/main.dir/src/framework/Renderer.cpp.o: ../src/framework/Renderer.cpp
+
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Display.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Renderer.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/gamestates/GameState.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/gamestates/Playing.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Card.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../src/gamestates/Playing.cpp
 
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Display.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Renderer.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/gamestates/GameState.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/gamestates/Playing.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Card.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
+
+CMakeFiles/main.dir/src/objects/Card.cpp.o: ../include/objects/Card.h
+CMakeFiles/main.dir/src/objects/Card.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/objects/Card.cpp.o: ../src/objects/Card.cpp
+
+CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/objects/Object.cpp.o: ../src/objects/Object.cpp
 

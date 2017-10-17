@@ -150,6 +150,33 @@ src/framework/Display.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Display.cpp.s
 .PHONY : src/framework/Display.cpp.s
 
+src/framework/Renderer.o: src/framework/Renderer.cpp.o
+
+.PHONY : src/framework/Renderer.o
+
+# target to build an object file
+src/framework/Renderer.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Renderer.cpp.o
+.PHONY : src/framework/Renderer.cpp.o
+
+src/framework/Renderer.i: src/framework/Renderer.cpp.i
+
+.PHONY : src/framework/Renderer.i
+
+# target to preprocess a source file
+src/framework/Renderer.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Renderer.cpp.i
+.PHONY : src/framework/Renderer.cpp.i
+
+src/framework/Renderer.s: src/framework/Renderer.cpp.s
+
+.PHONY : src/framework/Renderer.s
+
+# target to generate assembly for a file
+src/framework/Renderer.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Renderer.cpp.s
+.PHONY : src/framework/Renderer.cpp.s
+
 src/gamestates/Playing.o: src/gamestates/Playing.cpp.o
 
 .PHONY : src/gamestates/Playing.o
@@ -204,6 +231,60 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/objects/Card.o: src/objects/Card.cpp.o
+
+.PHONY : src/objects/Card.o
+
+# target to build an object file
+src/objects/Card.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Card.cpp.o
+.PHONY : src/objects/Card.cpp.o
+
+src/objects/Card.i: src/objects/Card.cpp.i
+
+.PHONY : src/objects/Card.i
+
+# target to preprocess a source file
+src/objects/Card.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Card.cpp.i
+.PHONY : src/objects/Card.cpp.i
+
+src/objects/Card.s: src/objects/Card.cpp.s
+
+.PHONY : src/objects/Card.s
+
+# target to generate assembly for a file
+src/objects/Card.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Card.cpp.s
+.PHONY : src/objects/Card.cpp.s
+
+src/objects/Object.o: src/objects/Object.cpp.o
+
+.PHONY : src/objects/Object.o
+
+# target to build an object file
+src/objects/Object.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Object.cpp.o
+.PHONY : src/objects/Object.cpp.o
+
+src/objects/Object.i: src/objects/Object.cpp.i
+
+.PHONY : src/objects/Object.i
+
+# target to preprocess a source file
+src/objects/Object.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Object.cpp.i
+.PHONY : src/objects/Object.cpp.i
+
+src/objects/Object.s: src/objects/Object.cpp.s
+
+.PHONY : src/objects/Object.s
+
+# target to generate assembly for a file
+src/objects/Object.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Object.cpp.s
+.PHONY : src/objects/Object.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -216,12 +297,21 @@ help:
 	@echo "... src/framework/Display.o"
 	@echo "... src/framework/Display.i"
 	@echo "... src/framework/Display.s"
+	@echo "... src/framework/Renderer.o"
+	@echo "... src/framework/Renderer.i"
+	@echo "... src/framework/Renderer.s"
 	@echo "... src/gamestates/Playing.o"
 	@echo "... src/gamestates/Playing.i"
 	@echo "... src/gamestates/Playing.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/objects/Card.o"
+	@echo "... src/objects/Card.i"
+	@echo "... src/objects/Card.s"
+	@echo "... src/objects/Object.o"
+	@echo "... src/objects/Object.i"
+	@echo "... src/objects/Object.s"
 .PHONY : help
 
 

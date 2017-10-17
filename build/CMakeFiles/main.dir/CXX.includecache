@@ -14,6 +14,16 @@ SDL2/SDL.h
 iostream
 -
 
+../include/framework/Renderer.h
+GL/Glew.h
+-
+iostream
+-
+fstream
+-
+sstream
+-
+
 ../include/gamestates/GameState.h
 SDL2/SDL.h
 -
@@ -23,12 +33,32 @@ framework/Display.h
 ../include/gamestates/framework/Display.h
 
 ../include/gamestates/Playing.h
+framework/Renderer.h
+../include/gamestates/framework/Renderer.h
 gamestates/GameState.h
 ../include/gamestates/gamestates/GameState.h
+objects/Card.h
+../include/gamestates/objects/Card.h
+
+../include/objects/Card.h
+objects/Object.h
+../include/objects/objects/Object.h
+
+../include/objects/Object.h
+iostream
+-
+vector
+-
+GL/glew.h
+-
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
 framework/Display.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Display.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Renderer.cpp
+framework/Renderer.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Renderer.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
 GL/glew.h
@@ -45,4 +75,12 @@ framework/Display.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.h
 gamestates/Playing.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Card.cpp
+objects/Card.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Card.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
+objects/Object.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Object.h
 

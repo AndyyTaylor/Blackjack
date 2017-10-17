@@ -4,13 +4,29 @@
 CMakeFiles/main.dir/src/framework/Display.cpp.o
  ../include/framework/Display.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
+CMakeFiles/main.dir/src/framework/Renderer.cpp.o
+ ../include/framework/Renderer.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Renderer.cpp
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o
  ../include/framework/Display.h
+ ../include/framework/Renderer.h
  ../include/gamestates/GameState.h
  ../include/gamestates/Playing.h
+ ../include/objects/Card.h
+ ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
 CMakeFiles/main.dir/src/main.cpp.o
  ../include/framework/Display.h
+ ../include/framework/Renderer.h
  ../include/gamestates/GameState.h
  ../include/gamestates/Playing.h
+ ../include/objects/Card.h
+ ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp
+CMakeFiles/main.dir/src/objects/Card.cpp.o
+ ../include/objects/Card.h
+ ../include/objects/Object.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Card.cpp
+CMakeFiles/main.dir/src/objects/Object.cpp.o
+ ../include/objects/Object.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp

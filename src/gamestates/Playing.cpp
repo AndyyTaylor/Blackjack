@@ -4,7 +4,15 @@
 
 #include "gamestates/Playing.h"
 
+Playing::Playing()
+: GameState()
+, simpleRenderer("data/shaders/vert.glsl", "data/shaders/frag.glsl")
+, myCard(1, 1, 1) {
+    
+}
+
 void Playing::init() {
+    
 }
 
 void Playing::cleanup() {}
@@ -12,15 +20,19 @@ void Playing::cleanup() {}
 void Playing::update() {
     std::cout << "Playing State" << std::endl;
     
-    glBegin(GL_QUADS);              // Each set of 4 vertices form a quad
-        glColor3f(1.0f, 0.0f, 0.0f);  // Red
-        glVertex2f(-0.5f, -0.5f);     // x, y
-        glVertex2f(0.5f, -0.5f);
-        glVertex2f(0.5f,  0.5f);
-        glVertex2f(-0.5f,  0.5f);
-    glEnd();
+    simpleRenderer.activate();
     
-    // glFlush();
+    /*GLuint k;
+    glGenBuffers(1, &k);
+    GLfloat vertices[] = {
+         0.0f,  0.5f,
+         0.5f, -0.5f,
+        -0.5f, -0.5f
+    };
+    glBindBuffer(GL_ARRAY_BUFFER, k);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);*/
+    
+    glDrawArrays(GL_TRIANGLES, 0, 3);
 }
 
 void Playing::render() {}

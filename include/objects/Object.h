@@ -9,7 +9,6 @@
 
 class Object {
  public:
-    virtual void init() = 0;
     virtual void cleanup() = 0;
 
     virtual void update() = 0;
