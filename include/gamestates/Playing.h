@@ -11,6 +11,7 @@ class Playing : public GameState {
  private:
     Renderer simpleRenderer;
     Card myCard;
+    Card cam;   // TODO
     
  public:
     Playing();

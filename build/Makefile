@@ -150,6 +150,33 @@ src/framework/Display.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Display.cpp.s
 .PHONY : src/framework/Display.cpp.s
 
+src/framework/Matrix.o: src/framework/Matrix.cpp.o
+
+.PHONY : src/framework/Matrix.o
+
+# target to build an object file
+src/framework/Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Matrix.cpp.o
+.PHONY : src/framework/Matrix.cpp.o
+
+src/framework/Matrix.i: src/framework/Matrix.cpp.i
+
+.PHONY : src/framework/Matrix.i
+
+# target to preprocess a source file
+src/framework/Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Matrix.cpp.i
+.PHONY : src/framework/Matrix.cpp.i
+
+src/framework/Matrix.s: src/framework/Matrix.cpp.s
+
+.PHONY : src/framework/Matrix.s
+
+# target to generate assembly for a file
+src/framework/Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Matrix.cpp.s
+.PHONY : src/framework/Matrix.cpp.s
+
 src/framework/Renderer.o: src/framework/Renderer.cpp.o
 
 .PHONY : src/framework/Renderer.o
@@ -297,6 +324,9 @@ help:
 	@echo "... src/framework/Display.o"
 	@echo "... src/framework/Display.i"
 	@echo "... src/framework/Display.s"
+	@echo "... src/framework/Matrix.o"
+	@echo "... src/framework/Matrix.i"
+	@echo "... src/framework/Matrix.s"
 	@echo "... src/framework/Renderer.o"
 	@echo "... src/framework/Renderer.i"
 	@echo "... src/framework/Renderer.s"

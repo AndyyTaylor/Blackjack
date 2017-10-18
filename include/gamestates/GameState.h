@@ -10,7 +10,6 @@
 
 class GameState {
  public:
-    virtual void init() = 0;
     virtual void cleanup() = 0;
     
     virtual void handleEvents() = 0;

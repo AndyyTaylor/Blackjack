@@ -14,6 +14,7 @@ int main(int argc, char** argv) {
         Display::clear();
         state.handleEvents();
         state.update();
+        state.render();
         Display::update();
     }
     

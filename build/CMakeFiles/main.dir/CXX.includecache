@@ -14,6 +14,18 @@ SDL2/SDL.h
 iostream
 -
 
+../include/framework/Glm_common.h
+GLM/glm.hpp
+-
+GLM/gtc/matrix_transform.hpp
+-
+GLM/gtc/type_ptr.hpp
+-
+
+../include/framework/Matrix.h
+Glm_common.h
+../include/framework/Glm_common.h
+
 ../include/framework/Renderer.h
 GL/Glew.h
 -
@@ -23,6 +35,8 @@ fstream
 -
 sstream
 -
+Glm_common.h
+../include/framework/Glm_common.h
 
 ../include/gamestates/GameState.h
 SDL2/SDL.h
@@ -51,8 +65,20 @@ vector
 -
 GL/glew.h
 -
+framework/Glm_common.h
+../include/objects/framework/Glm_common.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
+framework/Display.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Display.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Matrix.cpp
+framework/Matrix.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Matrix.h
+framework/Glm_common.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Glm_common.h
+objects/Object.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/objects/Object.h
 framework/Display.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Display.h
 
@@ -67,6 +93,8 @@ GLUT/glut.h
 -
 gamestates/Playing.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/gamestates/Playing.h
+framework/Matrix.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/framework/Matrix.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp
 iostream

@@ -1,7 +1,11 @@
-#version 150 core
+#version 410
 
-in vec3 position;
+layout(location = 0) in vec3 position;
+
+uniform mat4 M;
+uniform mat4 V;
+uniform mat4 P;
 
 void main() {
-    gl_Position = vec4(position, 1.0);
+    gl_Position = (P * V * M) * vec4(position, 1.0);
 }

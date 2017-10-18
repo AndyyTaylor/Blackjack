@@ -16,23 +16,16 @@ Renderer::Renderer(const std::string &vertFile, const std::string &fragFile) {
     glDeleteShader(vid);
     glDeleteShader(fid);
     
-    glGenVertexArrays(1, &vao);
-    glBindVertexArray(vao);
-    
-    glGenBuffers(1, &vbo);
-    posLocation = glGetAttribLocation(programID, "position");
-    
-    GLfloat vertices[] = {
-         0.0f,  0.5f,
-         0.5f, -0.5f,
-        -0.5f, -0.5f
-    };
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-    
-    glVertexAttribPointer(posLocation, 3, GL_FLOAT, GL_FALSE, 0, 0);
-    
-    glEnableVertexAttribArray(posLocation);
+    loc_pos = glGetAttribLocation(programID, "position");
+    loc_model = glGetAttribLocation(programID, "M");
+    loc_view = glGetAttribLocation(programID, "V");
+    loc_proj = glGetAttribLocation(programID, "P");
+}
+
+void Renderer::loadMVP(glm::mat4 m, glm::mat4 v, glm::mat4 p) {
+    glUniformMatrix4fv(loc_model, 1, GL_FALSE, glm::value_ptr(m));
+    glUniformMatrix4fv(loc_view, 1, GL_FALSE, glm::value_ptr(v));
+    glUniformMatrix4fv(loc_proj, 1, GL_FALSE, glm::value_ptr(p));
 }
 
 void Renderer::activate() {

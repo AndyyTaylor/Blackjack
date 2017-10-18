@@ -7,7 +7,7 @@
 
 class Card : public Object {
  public:
-    Card(float _x, float _y, float _z);
+    Card(float _x, float _y, float _z, GLuint programID);
     
     void render();
     void update();

@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include <GL/glew.h>
+#include "framework/Glm_common.h"
 
 class Object {
  public:
@@ -14,17 +15,21 @@ class Object {
     virtual void update() = 0;
     virtual void render() = 0;
     
-    void bind() { glBindBuffer(GL_ARRAY_BUFFER, vbo);}
+    void bind() { glBindVertexArray(vao); }
+    
+    glm::vec3 position;
+    glm::vec3 rotation;
+    glm::vec3 scale;
 
  protected:
-    float x, y, z;
     GLuint vbo;
+    GLuint vao;
     
-    std::vector<float> rel_mesh;
+    std::vector<glm::vec3> rel_mesh;
     
-    Object(float _x, float _y, float _z);
+    Object(float _x, float _y, float _z, GLuint programID);
     
-    void setupGL();
+    void setupGL(GLuint programID);
 };
 
 #endif

@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/framework/Display.cpp.o"
+  "/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Matrix.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/framework/Matrix.cpp.o"
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Renderer.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/framework/Renderer.cpp.o"
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/gamestates/Playing.cpp.o"
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/main.cpp.o"
