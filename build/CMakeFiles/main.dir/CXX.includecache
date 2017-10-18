@@ -53,6 +53,8 @@ gamestates/GameState.h
 ../include/gamestates/gamestates/GameState.h
 objects/Card.h
 ../include/gamestates/objects/Card.h
+objects/Table.h
+../include/gamestates/objects/Table.h
 
 ../include/objects/Card.h
 objects/Object.h
@@ -67,6 +69,10 @@ GL/glew.h
 -
 framework/Glm_common.h
 ../include/objects/framework/Glm_common.h
+
+../include/objects/Table.h
+objects/Object.h
+../include/objects/objects/Object.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
 framework/Display.h
@@ -111,4 +117,8 @@ objects/Card.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
 objects/Object.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Object.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp
+objects/Table.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Table.h
 

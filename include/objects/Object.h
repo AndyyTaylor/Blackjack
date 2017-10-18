@@ -20,9 +20,11 @@ class Object {
     glm::vec3 position;
     glm::vec3 rotation;
     glm::vec3 scale;
+    
+    std::vector<glm::vec4> colour;
 
  protected:
-    GLuint vbo;
+    GLuint pos_vbo, col_vbo;
     GLuint vao;
     
     std::vector<glm::vec3> rel_mesh;

@@ -22,6 +22,24 @@ Card::Card(float _x, float _y, float _z, GLuint programID)
         glm::vec3(-0.5, -0.5,  0.5)
     };
     
+    colour = {
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0),
+        glm::vec4(0.0, 0.0, 1.0, 1.0)
+    };
+    
     setupGL(programID);
 }
 

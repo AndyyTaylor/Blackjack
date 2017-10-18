@@ -22,6 +22,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/gamestates/GameStat
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/gamestates/Playing.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Table.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../src/gamestates/Playing.cpp
 
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Display.h
@@ -31,6 +32,7 @@ CMakeFiles/main.dir/src/main.cpp.o: ../include/gamestates/GameState.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/gamestates/Playing.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Table.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/main.dir/src/objects/Card.cpp.o: ../include/framework/Glm_common.h
@@ -41,4 +43,9 @@ CMakeFiles/main.dir/src/objects/Card.cpp.o: ../src/objects/Card.cpp
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/framework/Glm_common.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../src/objects/Object.cpp
+
+CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/framework/Glm_common.h
+CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/objects/Table.h
+CMakeFiles/main.dir/src/objects/Table.cpp.o: ../src/objects/Table.cpp
 

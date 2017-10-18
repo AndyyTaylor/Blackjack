@@ -6,12 +6,21 @@
 #include "framework/Renderer.h"
 #include "gamestates/GameState.h"
 #include "objects/Card.h"
+#include "objects/Table.h"
 
 class Playing : public GameState {
  private:
     Renderer simpleRenderer;
     Card myCard;
     Card cam;   // TODO
+    Table table;
+    
+    bool moving_right = false;
+    bool moving_left = false;
+    bool moving_forward = false;
+    bool moving_backward = false;
+    bool moving_up = false;
+    bool moving_down = false;
     
  public:
     Playing();

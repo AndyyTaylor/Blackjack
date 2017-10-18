@@ -33,7 +33,7 @@ namespace Maths {
     }
 
     glm::mat4 createProjMatrix() {
-        return glm::perspective(glm::radians(90.0f),
+        return glm::perspective(glm::radians(30.0f),
                                 static_cast<float>(Display::WIDTH) / static_cast<float>(Display::HEIGHT),
                                 0.1f, 10000.0f);
     }

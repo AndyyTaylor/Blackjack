@@ -312,6 +312,33 @@ src/objects/Object.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Object.cpp.s
 .PHONY : src/objects/Object.cpp.s
 
+src/objects/Table.o: src/objects/Table.cpp.o
+
+.PHONY : src/objects/Table.o
+
+# target to build an object file
+src/objects/Table.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Table.cpp.o
+.PHONY : src/objects/Table.cpp.o
+
+src/objects/Table.i: src/objects/Table.cpp.i
+
+.PHONY : src/objects/Table.i
+
+# target to preprocess a source file
+src/objects/Table.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Table.cpp.i
+.PHONY : src/objects/Table.cpp.i
+
+src/objects/Table.s: src/objects/Table.cpp.s
+
+.PHONY : src/objects/Table.s
+
+# target to generate assembly for a file
+src/objects/Table.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Table.cpp.s
+.PHONY : src/objects/Table.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -342,6 +369,9 @@ help:
 	@echo "... src/objects/Object.o"
 	@echo "... src/objects/Object.i"
 	@echo "... src/objects/Object.s"
+	@echo "... src/objects/Table.o"
+	@echo "... src/objects/Table.i"
+	@echo "... src/objects/Table.s"
 .PHONY : help
 
 

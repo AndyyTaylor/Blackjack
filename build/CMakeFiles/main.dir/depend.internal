@@ -23,6 +23,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o
  ../include/gamestates/Playing.h
  ../include/objects/Card.h
  ../include/objects/Object.h
+ ../include/objects/Table.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
 CMakeFiles/main.dir/src/main.cpp.o
  ../include/framework/Display.h
@@ -32,6 +33,7 @@ CMakeFiles/main.dir/src/main.cpp.o
  ../include/gamestates/Playing.h
  ../include/objects/Card.h
  ../include/objects/Object.h
+ ../include/objects/Table.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp
 CMakeFiles/main.dir/src/objects/Card.cpp.o
  ../include/framework/Glm_common.h
@@ -42,3 +44,8 @@ CMakeFiles/main.dir/src/objects/Object.cpp.o
  ../include/framework/Glm_common.h
  ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
+CMakeFiles/main.dir/src/objects/Table.cpp.o
+ ../include/framework/Glm_common.h
+ ../include/objects/Object.h
+ ../include/objects/Table.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp

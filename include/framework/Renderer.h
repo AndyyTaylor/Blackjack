@@ -18,12 +18,13 @@ class Renderer {
     void activate();
     GLuint getProgramID() { return programID; }
     
-    void loadMVP(glm::mat4 m, glm::mat4 v, glm::mat4 p);
+    void loadMVP(const glm::mat4 &mvp);
+    void loadColour(const glm::vec4 &colour);
     
  private:
     GLuint programID;
     
-    GLint loc_pos, loc_model, loc_view, loc_proj;
+    GLint loc_pos, loc_col, loc_mvp;
     
     void printShaderCompilationError(GLuint id);
     
