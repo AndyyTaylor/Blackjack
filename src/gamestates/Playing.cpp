@@ -8,9 +8,9 @@
 Playing::Playing()
 : GameState()
 , simpleRenderer("data/shaders/vert.glsl", "data/shaders/frag.glsl")
-, myCard(0, 0, 0, simpleRenderer.getProgramID())
-, cam(0, 2, 15, simpleRenderer.getProgramID())
-, table(0, 0, 5, simpleRenderer.getProgramID()) {
+, myCard(2, 0, 0, simpleRenderer.getProgramID())
+, cam(0, 1, 5, simpleRenderer.getProgramID())
+, table(0, -0.0001f, 0, simpleRenderer.getProgramID()) {
     
 }
 
@@ -40,6 +40,11 @@ void Playing::update() {
     if (moving_down) {
         cam.position.y -= speed;
     }
+    
+    if (fabs(fabs(myCard.position.x) - 2) < 0.01f) {
+        myCard.glide(glm::vec3(-myCard.position.x, 0, 0), glm::vec3(0, myCard.rotation.y + (180*5 * (myCard.position.x/fabs(myCard.position.x))), 0), 70);
+    }
+    myCard.update();
 }
 
 void Playing::render() {
