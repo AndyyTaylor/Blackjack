@@ -6,7 +6,11 @@
 #include <iostream>
 #include <vector>
 #include <GL/glew.h>
+#include <SDL2/SDL.h>
+#include <SDL2/SDL_image.h>
 #include "framework/Glm_common.h"
+
+enum RENDER_TYPE {COLOR, TEXTURE};
 
 class Object {
  public:
@@ -22,14 +26,17 @@ class Object {
     glm::vec3 scale;
     
     std::vector<glm::vec4> colour;
+    std::vector<glm::vec2> uvs;
 
  protected:
-    GLuint pos_vbo, col_vbo;
+    GLuint pos_vbo, col_vbo, TextureID;
     GLuint vao;
+    
+    RENDER_TYPE render_type;
     
     std::vector<glm::vec3> rel_mesh;
     
-    Object(float _x, float _y, float _z, GLuint programID);
+    Object(float _x, float _y, float _z, GLuint programID, RENDER_TYPE r_type);
     
     void setupGL(GLuint programID);
 };

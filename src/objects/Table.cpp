@@ -3,7 +3,7 @@
 #include "objects/Table.h"
 
 Table::Table(float _x, float _y, float _z, GLuint programID)
-: Object(_x, _y, _z, programID) {
+: Object(_x, _y, _z, programID, COLOR) {
     float len = 3;
     
     rel_mesh = {

@@ -14,6 +14,12 @@
 # EXTERNAL cache entries
 ########################
 
+//Value Computed by CMake
+Blackjack_BINARY_DIR:STATIC=/Users/andytaylor/Google Drive/C++/BlackJack/build
+
+//Value Computed by CMake
+Blackjack_SOURCE_DIR:STATIC=/Users/andytaylor/Google Drive/C++/BlackJack
+
 //Path to a program.
 CMAKE_AR:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ar
 
@@ -128,7 +134,7 @@ CMAKE_OSX_DEPLOYMENT_TARGET:STRING=
 CMAKE_OSX_SYSROOT:STRING=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=UnnamedGame
+CMAKE_PROJECT_NAME:STATIC=Blackjack
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Library/Developer/CommandLineTools/usr/bin/ranlib

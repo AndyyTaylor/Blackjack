@@ -7,10 +7,11 @@
 
 Playing::Playing()
 : GameState()
-, simpleRenderer("data/shaders/vert.glsl", "data/shaders/frag.glsl")
-, myCard(2, 0, 0, simpleRenderer.getProgramID())
-, cam(0, 1, 5, simpleRenderer.getProgramID())
-, table(0, -0.0001f, 0, simpleRenderer.getProgramID()) {
+, colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
+, texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
+, myCard(2, 0, 0, colRenderer.getProgramID())
+, cam(0, 1, 5, colRenderer.getProgramID())
+, table(0, -0.0001f, 0, colRenderer.getProgramID()) {
     
 }
 
@@ -41,24 +42,28 @@ void Playing::update() {
         cam.position.y -= speed;
     }
     
-    if (fabs(fabs(myCard.position.x) - 2) < 0.01f) {
-        myCard.glide(glm::vec3(-myCard.position.x, 0, 0), glm::vec3(0, myCard.rotation.y + (180*5 * (myCard.position.x/fabs(myCard.position.x))), 0), 70);
+    if (false && fabs(fabs(myCard.position.x) - 2) < 0.01f) {
+        myCard.glide(glm::vec3(-myCard.position.x, 0, 0)
+                     , glm::vec3(0, myCard.rotation.y + (180*5 * (myCard.position.x/fabs(myCard.position.x)))
+                     , 0), 70);
     }
     myCard.update();
 }
 
 void Playing::render() {
-    simpleRenderer.activate();
-    
-    glm::mat4 m = Maths::createModelMatrix(myCard);
     glm::mat4 v = Maths::createViewMatrix(cam);
     glm::mat4 p = Maths::createProjMatrix();
-    simpleRenderer.loadMVP(p * v * m);
-    myCard.render();
+    glm::mat4 m;
     
+    colRenderer.activate();
     m = Maths::createModelMatrix(table);
-    simpleRenderer.loadMVP(p * v * m);
+    colRenderer.loadMVP(p * v * m);
     table.render();
+    
+    texRenderer.activate();
+    m = Maths::createModelMatrix(myCard);
+    texRenderer.loadMVP(p * v * m);
+    myCard.render();
 }
 
 void Playing::handleEvents() {

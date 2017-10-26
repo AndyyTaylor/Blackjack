@@ -3,8 +3,8 @@
 #include "objects/Card.h"
 
 Card::Card(float _x, float _y, float _z, GLuint programID)
-: Object(_x, _y, _z, programID) {
-    float size = 0.25f;
+: Object(_x, _y, _z, programID, TEXTURE) {
+    float size = 0.25f*5;
     rel_mesh = {
         glm::vec3(size/2 * 0.7,  0,  size/2),
         glm::vec3(-size/2 * 0.7,  0,  size/2),
@@ -21,6 +21,24 @@ Card::Card(float _x, float _y, float _z, GLuint programID)
         glm::vec3(0,  0,  0),
         glm::vec3(-size/2 * 0.7,  0,  size/2),
         glm::vec3(-size/2 * 0.7, 0,  -size/2)
+    };
+    
+    uvs = {
+        glm::vec2(1, 1),
+        glm::vec2(0, 1),
+        glm::vec2(0.5, 0.5),
+        
+        glm::vec2(1, 1),
+        glm::vec2(0.5, 0.5),
+        glm::vec2(1, 0.0),
+        
+        glm::vec2(0.0, 0.0),
+        glm::vec2(1.0, 0.0),
+        glm::vec2(0.5, 0.5),
+        
+        glm::vec2(0.5, 0.5),
+        glm::vec2(0.0, 1.0),
+        glm::vec2(0.0, 0.0)
     };
     
     colour = {
@@ -46,8 +64,9 @@ Card::Card(float _x, float _y, float _z, GLuint programID)
 
 void Card::render() {
     glBindVertexArray(vao);
-    
+    glEnable(GL_TEXTURE_2D);
     glDrawArrays(GL_TRIANGLES, 0, rel_mesh.size());
+    glDisable(GL_TEXTURE_2D);
 }
 
 void Card::update() {

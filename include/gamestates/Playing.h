@@ -10,7 +10,9 @@
 
 class Playing : public GameState {
  private:
-    Renderer simpleRenderer;
+    Renderer colRenderer;
+    Renderer texRenderer;
+    
     Card myCard;
     Card cam;   // TODO
     Table table;

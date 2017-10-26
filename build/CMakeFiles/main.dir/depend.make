@@ -41,6 +41,7 @@ CMakeFiles/main.dir/src/objects/Card.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/objects/Card.cpp.o: ../src/objects/Card.cpp
 
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/framework/Glm_common.h
+CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/framework/stb_image.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../src/objects/Object.cpp
 

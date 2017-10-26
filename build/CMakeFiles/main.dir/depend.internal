@@ -42,6 +42,7 @@ CMakeFiles/main.dir/src/objects/Card.cpp.o
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Card.cpp
 CMakeFiles/main.dir/src/objects/Object.cpp.o
  ../include/framework/Glm_common.h
+ ../include/framework/stb_image.h
  ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
 CMakeFiles/main.dir/src/objects/Table.cpp.o

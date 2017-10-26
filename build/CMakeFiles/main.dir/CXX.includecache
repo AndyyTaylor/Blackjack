@@ -38,6 +38,36 @@ sstream
 Glm_common.h
 ../include/framework/Glm_common.h
 
+../include/framework/stb_image.h
+stb_image.h
+../include/framework/stb_image.h
+stdio.h
+-
+stdarg.h
+-
+stddef.h
+-
+stdlib.h
+-
+string.h
+-
+limits.h
+-
+math.h
+-
+stdio.h
+-
+assert.h
+-
+stdint.h
+-
+emmintrin.h
+-
+intrin.h
+-
+arm_neon.h
+-
+
 ../include/gamestates/GameState.h
 SDL2/SDL.h
 -
@@ -66,6 +96,10 @@ iostream
 vector
 -
 GL/glew.h
+-
+SDL2/SDL.h
+-
+SDL2/SDL_image.h
 -
 framework/Glm_common.h
 ../include/objects/framework/Glm_common.h
@@ -117,6 +151,8 @@ objects/Card.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
 objects/Object.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Object.h
+framework/stb_image.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/framework/stb_image.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp
 objects/Table.h

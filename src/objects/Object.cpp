@@ -2,10 +2,16 @@
 
 #include "objects/Object.h"
 
-Object::Object(float _x, float _y, float _z, GLuint programID)
+#ifndef STB_IMAGE_IMPLEMENTATION
+#define STB_IMAGE_IMPLEMENTATION
+#include "framework/stb_image.h"
+#endif
+
+Object::Object(float _x, float _y, float _z, GLuint programID, RENDER_TYPE r_type)
 : position(_x, _y, _z)
 , rotation(0, 0, 0)
-, scale(1.0, 1.0, 1.0) {
+, scale(1.0, 1.0, 1.0)
+, render_type(r_type) {
     
 }
 
@@ -21,9 +27,37 @@ void Object::setupGL(GLuint programID) {
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
     glEnableVertexAttribArray(0);
     
-    glBindBuffer(GL_ARRAY_BUFFER, col_vbo);
-    glBufferData(GL_ARRAY_BUFFER, colour.size() * sizeof(glm::vec4), colour.data(), GL_STATIC_DRAW);
-    glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
-    glEnableVertexAttribArray(1);
+    if (render_type == COLOR) {
+        glBindBuffer(GL_ARRAY_BUFFER, col_vbo);     // TODO: col_vbo should be more generic
+        glBufferData(GL_ARRAY_BUFFER, colour.size() * sizeof(glm::vec4), colour.data(), GL_STATIC_DRAW);
+        glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, 0, 0);
+        glEnableVertexAttribArray(1);
+    } else {
+        int w, h, comp;
+        unsigned char* image = stbi_load("data/images/9.png", &w, &h, &comp, 4);
+            
+        if (image == nullptr)
+            std::cout << "Load Failed" << '\n';
+        
+            
+        glGenTextures(1, &TextureID);
+
+        glBindTexture(GL_TEXTURE_2D, TextureID);
+        
+        if (comp == 3)
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, w, h, 0, GL_RGB, GL_UNSIGNED_BYTE, image);
+        else if (comp == 4)
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, image);
+
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        /*glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);*/
+        std::cout << (comp) << '\n';
+        glBindBuffer(GL_ARRAY_BUFFER, col_vbo);
+        glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), uvs.data(), GL_STATIC_DRAW);
+        glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
+        glEnableVertexAttribArray(1);
+    }
 }
 
