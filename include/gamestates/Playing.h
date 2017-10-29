@@ -8,6 +8,7 @@
 #include "objects/Card.h"
 #include "objects/Table.h"
 #include "objects/Deck.h"
+#include "objects/Button.h"
 
 class Playing : public GameState {
  private:
@@ -18,6 +19,8 @@ class Playing : public GameState {
     Card cam;   // TODO
     Table table;
     Deck deck;
+    
+    Button hitButton;
     
     bool moving_right = false;
     bool moving_left = false;

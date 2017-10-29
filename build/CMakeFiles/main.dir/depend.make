@@ -26,6 +26,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Renderer.
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Tex_Atlas.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/gamestates/GameState.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/gamestates/Playing.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Button.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Deck.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Object.h
@@ -39,11 +40,18 @@ CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Renderer.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Tex_Atlas.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/gamestates/GameState.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/gamestates/Playing.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Button.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Deck.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Table.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
+
+CMakeFiles/main.dir/src/objects/Button.cpp.o: ../include/framework/Glm_common.h
+CMakeFiles/main.dir/src/objects/Button.cpp.o: ../include/framework/Tex_Atlas.h
+CMakeFiles/main.dir/src/objects/Button.cpp.o: ../include/objects/Button.h
+CMakeFiles/main.dir/src/objects/Button.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/objects/Button.cpp.o: ../src/objects/Button.cpp
 
 CMakeFiles/main.dir/src/objects/Card.cpp.o: ../include/framework/Glm_common.h
 CMakeFiles/main.dir/src/objects/Card.cpp.o: ../include/framework/Tex_Atlas.h

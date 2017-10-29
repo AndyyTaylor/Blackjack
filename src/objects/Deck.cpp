@@ -7,6 +7,8 @@ Deck::Deck(float _x, float _y, float _z, int num_decks, int _deck_height)
 , y(_y)
 , z(_z)
 , deck_height(_deck_height) {
+    std::srand(std::time(0));
+    
     genCards(num_decks);
 }
 
@@ -24,8 +26,6 @@ void Deck::genCards(int num_decks) {
             }
         }
     }
-    
-    std::cout << cards.size() << std::endl;
 }
 
 void Deck::render(const glm::mat4 &p, const glm::mat4 &v, const Renderer &texRenderer) {
@@ -42,20 +42,33 @@ void Deck::render(const glm::mat4 &p, const glm::mat4 &v, const Renderer &texRen
 void Deck::update() {
     tick++;
     
-    
+    if (tick == 0) shuffle();
     if ((tick / 3) > tipped) {
         int ind = tipped-1;
         if (tipped >= cards.size() + 1) ind = 52 - (ind - 52);
-        if (tipped >= cards.size() * 2 + 2) { tipped = 0; tick = 0; }
+        if (tipped >= cards.size() * 2 + 2) { tipped = 0; tick = -40; }
         cards[ind].glide(cards[ind].position
                      , glm::vec3(0, 0, tipped >= cards.size() + 1 ? 180 : 0)
                      , 15);
         tipped += 1;
-        
-        std::cout << ind << std::endl;
     }
     
     for (int i = 0; i < cards.size(); i++) {
         cards[i].update();
+    }
+}
+
+void Deck::shuffle() {
+    /* Durstenfeld's version of the Fisher-Yates shuffle O(n) complexity */
+    for (int i = cards.size()-1; i >= 0; i--) {
+        int j = (rand() % static_cast<int>(i + 1));    // NOLINT
+        
+        Card temp = cards[j];
+        cards[j] = cards[i];
+        cards[i] = temp;
+    }
+    
+    for (int i = 0; i < cards.size(); i++) {
+        cards[i].position = glm::vec3(x - (deck_height/2.0f) + (1.0f*deck_height/(cards.size()))*i, y + 0.0001f*i, z);
     }
 }

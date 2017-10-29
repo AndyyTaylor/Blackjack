@@ -285,6 +285,33 @@ src/main.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/objects/Button.o: src/objects/Button.cpp.o
+
+.PHONY : src/objects/Button.o
+
+# target to build an object file
+src/objects/Button.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Button.cpp.o
+.PHONY : src/objects/Button.cpp.o
+
+src/objects/Button.i: src/objects/Button.cpp.i
+
+.PHONY : src/objects/Button.i
+
+# target to preprocess a source file
+src/objects/Button.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Button.cpp.i
+.PHONY : src/objects/Button.cpp.i
+
+src/objects/Button.s: src/objects/Button.cpp.s
+
+.PHONY : src/objects/Button.s
+
+# target to generate assembly for a file
+src/objects/Button.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Button.cpp.s
+.PHONY : src/objects/Button.cpp.s
+
 src/objects/Card.o: src/objects/Card.cpp.o
 
 .PHONY : src/objects/Card.o
@@ -420,6 +447,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/objects/Button.o"
+	@echo "... src/objects/Button.i"
+	@echo "... src/objects/Button.s"
 	@echo "... src/objects/Card.o"
 	@echo "... src/objects/Card.i"
 	@echo "... src/objects/Card.s"

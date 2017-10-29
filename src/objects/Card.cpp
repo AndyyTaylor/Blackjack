@@ -6,6 +6,8 @@ Card::Card(float _x, float _y, float _z, SUIT _suit, FACE _face)
 : Object(_x, _y, _z, TEXTURE)
 , suit(_suit)
 , face(_face) {
+    image_file = "data/images/cards.png";
+    
     float size = 0.25f;
     rel_mesh = {
         // FRONT
@@ -48,6 +50,7 @@ Card::Card(float _x, float _y, float _z, SUIT _suit, FACE _face)
 
 void Card::render() {
     glBindVertexArray(vao);
+    glBindTexture(GL_TEXTURE_2D, TextureID);
     glEnable(GL_TEXTURE_2D);
     glDrawArrays(GL_TRIANGLES, 0, rel_mesh.size());
     glDisable(GL_TEXTURE_2D);

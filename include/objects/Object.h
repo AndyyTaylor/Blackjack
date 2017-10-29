@@ -39,6 +39,7 @@ class Object {
     RENDER_TYPE render_type;
     
     std::vector<glm::vec3> rel_mesh;
+    std::string image_file;
     
     Object(float _x, float _y, float _z, RENDER_TYPE r_type);
     

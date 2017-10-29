@@ -34,7 +34,7 @@ void Object::setupGL() {
         glEnableVertexAttribArray(1);
     } else {
         int w, h, comp;
-        unsigned char* image = stbi_load("data/images/cards.png", &w, &h, &comp, 4);
+        unsigned char* image = stbi_load(image_file.c_str(), &w, &h, &comp, 4);
             
         if (image == nullptr)
             std::cout << "Load Failed" << '\n';

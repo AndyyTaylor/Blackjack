@@ -1,4 +1,5 @@
 // Copyright 2017 Andy Taylor
+// https://www.turbosquid.com/FullPreview/Index.cfm/ID/1012557
 
 #include "objects/Table.h"
 

@@ -6,7 +6,10 @@
 #include "framework/Matrix.h"
 #include "framework/Renderer.h"
 #include "objects/Card.h"
+
+#include <cstdlib>
 #include <iostream>
+#include <ctime>
 
 class Deck {
  private:
@@ -16,6 +19,7 @@ class Deck {
     int tipped = 0;
     
     void genCards(int num_decks);
+    void shuffle();
     
  public:
     Deck(float _x, float _y, float _z, int num_decks, int _deck_height);

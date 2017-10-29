@@ -12,7 +12,8 @@ Playing::Playing()
 , myCard(2, 0, 0, CLUB, NINE)
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
-, deck(0, 0, -0.5f, 1, 3) {
+, deck(0, 0, -0.5f, 1, 3)
+, hitButton(-0.3f, 0, 0.8f) {
     
 }
 
@@ -67,6 +68,11 @@ void Playing::render() {
     m = Maths::createModelMatrix(myCard);
     texRenderer.loadMVP(p * v * m);
     myCard.render();
+    
+    texRenderer.activate();
+    m = Maths::createModelMatrix(hitButton);
+    texRenderer.loadMVP(p * v * m);
+    hitButton.render();
     
     deck.render(p, v, texRenderer);
 }
