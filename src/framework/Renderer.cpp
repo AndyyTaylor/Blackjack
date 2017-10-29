@@ -21,11 +21,11 @@ Renderer::Renderer(const std::string &vertFile, const std::string &fragFile) {
     loc_mvp = glGetUniformLocation(programID, "MVP");
 }
 
-void Renderer::loadMVP(const glm::mat4 &mvp) {
+void Renderer::loadMVP(const glm::mat4 &mvp) const {
     glUniformMatrix4fv(loc_mvp, 1, GL_FALSE, glm::value_ptr(mvp));
 }
 
-void Renderer::activate() {
+void Renderer::activate() const {
     glUseProgram(programID);
 }
 

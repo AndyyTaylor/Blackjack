@@ -8,45 +8,67 @@ CMakeFiles/main.dir/src/framework/Matrix.cpp.o
  ../include/framework/Display.h
  ../include/framework/Glm_common.h
  ../include/framework/Matrix.h
+ ../include/framework/Tex_Atlas.h
  ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Matrix.cpp
 CMakeFiles/main.dir/src/framework/Renderer.cpp.o
  ../include/framework/Glm_common.h
  ../include/framework/Renderer.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Renderer.cpp
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o
+ ../include/framework/Glm_common.h
+ ../include/framework/Tex_Atlas.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Tex_Atlas.cpp
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o
  ../include/framework/Display.h
  ../include/framework/Glm_common.h
  ../include/framework/Matrix.h
  ../include/framework/Renderer.h
+ ../include/framework/Tex_Atlas.h
  ../include/gamestates/GameState.h
  ../include/gamestates/Playing.h
  ../include/objects/Card.h
+ ../include/objects/Deck.h
  ../include/objects/Object.h
  ../include/objects/Table.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
 CMakeFiles/main.dir/src/main.cpp.o
  ../include/framework/Display.h
  ../include/framework/Glm_common.h
+ ../include/framework/Matrix.h
  ../include/framework/Renderer.h
+ ../include/framework/Tex_Atlas.h
  ../include/gamestates/GameState.h
  ../include/gamestates/Playing.h
  ../include/objects/Card.h
+ ../include/objects/Deck.h
  ../include/objects/Object.h
  ../include/objects/Table.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp
 CMakeFiles/main.dir/src/objects/Card.cpp.o
  ../include/framework/Glm_common.h
+ ../include/framework/Tex_Atlas.h
  ../include/objects/Card.h
  ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Card.cpp
+CMakeFiles/main.dir/src/objects/Deck.cpp.o
+ ../include/framework/Glm_common.h
+ ../include/framework/Matrix.h
+ ../include/framework/Renderer.h
+ ../include/framework/Tex_Atlas.h
+ ../include/objects/Card.h
+ ../include/objects/Deck.h
+ ../include/objects/Object.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Deck.cpp
 CMakeFiles/main.dir/src/objects/Object.cpp.o
  ../include/framework/Glm_common.h
+ ../include/framework/Tex_Atlas.h
  ../include/framework/stb_image.h
  ../include/objects/Object.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
 CMakeFiles/main.dir/src/objects/Table.cpp.o
  ../include/framework/Glm_common.h
+ ../include/framework/Tex_Atlas.h
  ../include/objects/Object.h
  ../include/objects/Table.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp

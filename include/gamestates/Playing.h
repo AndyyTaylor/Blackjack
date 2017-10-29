@@ -7,6 +7,7 @@
 #include "gamestates/GameState.h"
 #include "objects/Card.h"
 #include "objects/Table.h"
+#include "objects/Deck.h"
 
 class Playing : public GameState {
  private:
@@ -16,6 +17,7 @@ class Playing : public GameState {
     Card myCard;
     Card cam;   // TODO
     Table table;
+    Deck deck;
     
     bool moving_right = false;
     bool moving_left = false;

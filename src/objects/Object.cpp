@@ -7,7 +7,7 @@
 #include "framework/stb_image.h"
 #endif
 
-Object::Object(float _x, float _y, float _z, GLuint programID, RENDER_TYPE r_type)
+Object::Object(float _x, float _y, float _z, RENDER_TYPE r_type)
 : position(_x, _y, _z)
 , rotation(0, 0, 0)
 , scale(1.0, 1.0, 1.0)
@@ -15,7 +15,7 @@ Object::Object(float _x, float _y, float _z, GLuint programID, RENDER_TYPE r_typ
     
 }
 
-void Object::setupGL(GLuint programID) {
+void Object::setupGL() {
     glGenBuffers(1, &pos_vbo);
     glGenBuffers(1, &col_vbo);
     glGenVertexArrays(1, &vao);
@@ -34,11 +34,13 @@ void Object::setupGL(GLuint programID) {
         glEnableVertexAttribArray(1);
     } else {
         int w, h, comp;
-        unsigned char* image = stbi_load("data/images/9.png", &w, &h, &comp, 4);
+        unsigned char* image = stbi_load("data/images/cards.png", &w, &h, &comp, 4);
             
         if (image == nullptr)
             std::cout << "Load Failed" << '\n';
         
+        Tex_Atlas::setTotalDimensions(w, h);
+        setupUVs();
             
         glGenTextures(1, &TextureID);
 
@@ -53,7 +55,7 @@ void Object::setupGL(GLuint programID) {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR_MIPMAP_LINEAR);
         /*glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);*/
-        std::cout << (comp) << '\n';
+
         glBindBuffer(GL_ARRAY_BUFFER, col_vbo);
         glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), uvs.data(), GL_STATIC_DRAW);
         glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);

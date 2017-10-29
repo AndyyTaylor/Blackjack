@@ -7,11 +7,13 @@
 
 class Table : public Object {
  public:
-    Table(float _x, float _y, float _z, GLuint programID);
+    Table(float _x, float _y, float _z);
     
     void render();
     void update();
     void cleanup();
+    
+    void setupUVs() {}
 };
 
 

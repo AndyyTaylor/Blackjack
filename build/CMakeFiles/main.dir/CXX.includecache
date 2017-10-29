@@ -38,6 +38,10 @@ sstream
 Glm_common.h
 ../include/framework/Glm_common.h
 
+../include/framework/Tex_Atlas.h
+framework/Glm_common.h
+../include/framework/framework/Glm_common.h
+
 ../include/framework/stb_image.h
 stb_image.h
 ../include/framework/stb_image.h
@@ -85,10 +89,22 @@ objects/Card.h
 ../include/gamestates/objects/Card.h
 objects/Table.h
 ../include/gamestates/objects/Table.h
+objects/Deck.h
+../include/gamestates/objects/Deck.h
 
 ../include/objects/Card.h
 objects/Object.h
 ../include/objects/objects/Object.h
+
+../include/objects/Deck.h
+framework/Matrix.h
+../include/objects/framework/Matrix.h
+framework/Renderer.h
+../include/objects/framework/Renderer.h
+objects/Card.h
+../include/objects/objects/Card.h
+iostream
+-
 
 ../include/objects/Object.h
 iostream
@@ -103,6 +119,8 @@ SDL2/SDL_image.h
 -
 framework/Glm_common.h
 ../include/objects/framework/Glm_common.h
+framework/Tex_Atlas.h
+../include/objects/framework/Tex_Atlas.h
 
 ../include/objects/Table.h
 objects/Object.h
@@ -126,6 +144,12 @@ framework/Display.h
 framework/Renderer.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Renderer.h
 
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Tex_Atlas.cpp
+framework/Tex_Atlas.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Tex_Atlas.h
+iostream
+-
+
 /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
 GL/glew.h
 -
@@ -147,6 +171,10 @@ gamestates/Playing.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Card.cpp
 objects/Card.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Card.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Deck.cpp
+objects/Deck.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Deck.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp
 objects/Object.h

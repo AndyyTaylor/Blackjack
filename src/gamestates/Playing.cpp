@@ -9,16 +9,17 @@ Playing::Playing()
 : GameState()
 , colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
 , texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
-, myCard(2, 0, 0, colRenderer.getProgramID())
-, cam(0, 1, 5, colRenderer.getProgramID())
-, table(0, -0.0001f, 0, colRenderer.getProgramID()) {
+, myCard(2, 0, 0, CLUB, NINE)
+, cam(0, 1, 5, CLUB, ACE)
+, table(0, -0.001f, 0)
+, deck(0, 0, -0.5f, 1, 3) {
     
 }
 
 void Playing::cleanup() {}
 
 void Playing::update() {
-    float speed = 0.1f;
+    float speed = 0.03f;
     if (moving_forward) {
         cam.position.x -= cos(glm::radians(cam.rotation.y + 90)) * speed;
         cam.position.z -= sin(glm::radians(cam.rotation.y + 90)) * speed;
@@ -42,12 +43,14 @@ void Playing::update() {
         cam.position.y -= speed;
     }
     
-    if (false && fabs(fabs(myCard.position.x) - 2) < 0.01f) {
+    if (fabs(fabs(myCard.position.x) - 2) < 0.01f) {
         myCard.glide(glm::vec3(-myCard.position.x, 0, 0)
                      , glm::vec3(0, myCard.rotation.y + (180*5 * (myCard.position.x/fabs(myCard.position.x)))
-                     , 0), 70);
+                     , 0), 100);
     }
     myCard.update();
+    
+    deck.update();
 }
 
 void Playing::render() {
@@ -64,6 +67,8 @@ void Playing::render() {
     m = Maths::createModelMatrix(myCard);
     texRenderer.loadMVP(p * v * m);
     myCard.render();
+    
+    deck.render(p, v, texRenderer);
 }
 
 void Playing::handleEvents() {

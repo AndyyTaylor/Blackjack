@@ -153,9 +153,33 @@ CMakeFiles/main.dir/src/framework/Renderer.cpp.o.provides: CMakeFiles/main.dir/s
 CMakeFiles/main.dir/src/framework/Renderer.cpp.o.provides.build: CMakeFiles/main.dir/src/framework/Renderer.cpp.o
 
 
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o: ../src/framework/Tex_Atlas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o -c "/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Tex_Atlas.cpp"
+
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Tex_Atlas.cpp" > CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.i
+
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Tex_Atlas.cpp" -o CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.s
+
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.requires
+
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.provides: CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.provides
+
+CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.provides.build: CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o
+
+
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../src/gamestates/Playing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/main.dir/src/gamestates/Playing.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/gamestates/Playing.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/gamestates/Playing.cpp.o -c "/Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp"
 
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.i: cmake_force
@@ -179,7 +203,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o.provides.build: CMakeFiles/main
 
 CMakeFiles/main.dir/src/objects/Card.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/objects/Card.cpp.o: ../src/objects/Card.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/main.dir/src/objects/Card.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/objects/Card.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/objects/Card.cpp.o -c "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Card.cpp"
 
 CMakeFiles/main.dir/src/objects/Card.cpp.i: cmake_force
@@ -201,9 +225,33 @@ CMakeFiles/main.dir/src/objects/Card.cpp.o.provides: CMakeFiles/main.dir/src/obj
 CMakeFiles/main.dir/src/objects/Card.cpp.o.provides.build: CMakeFiles/main.dir/src/objects/Card.cpp.o
 
 
+CMakeFiles/main.dir/src/objects/Deck.cpp.o: CMakeFiles/main.dir/flags.make
+CMakeFiles/main.dir/src/objects/Deck.cpp.o: ../src/objects/Deck.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/objects/Deck.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/objects/Deck.cpp.o -c "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Deck.cpp"
+
+CMakeFiles/main.dir/src/objects/Deck.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/main.dir/src/objects/Deck.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Deck.cpp" > CMakeFiles/main.dir/src/objects/Deck.cpp.i
+
+CMakeFiles/main.dir/src/objects/Deck.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/main.dir/src/objects/Deck.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Deck.cpp" -o CMakeFiles/main.dir/src/objects/Deck.cpp.s
+
+CMakeFiles/main.dir/src/objects/Deck.cpp.o.requires:
+
+.PHONY : CMakeFiles/main.dir/src/objects/Deck.cpp.o.requires
+
+CMakeFiles/main.dir/src/objects/Deck.cpp.o.provides: CMakeFiles/main.dir/src/objects/Deck.cpp.o.requires
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Deck.cpp.o.provides.build
+.PHONY : CMakeFiles/main.dir/src/objects/Deck.cpp.o.provides
+
+CMakeFiles/main.dir/src/objects/Deck.cpp.o.provides.build: CMakeFiles/main.dir/src/objects/Deck.cpp.o
+
+
 CMakeFiles/main.dir/src/objects/Object.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../src/objects/Object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/main.dir/src/objects/Object.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/main.dir/src/objects/Object.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/objects/Object.cpp.o -c "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp"
 
 CMakeFiles/main.dir/src/objects/Object.cpp.i: cmake_force
@@ -227,7 +275,7 @@ CMakeFiles/main.dir/src/objects/Object.cpp.o.provides.build: CMakeFiles/main.dir
 
 CMakeFiles/main.dir/src/objects/Table.cpp.o: CMakeFiles/main.dir/flags.make
 CMakeFiles/main.dir/src/objects/Table.cpp.o: ../src/objects/Table.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/main.dir/src/objects/Table.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/main.dir/src/objects/Table.cpp.o"
 	/Library/Developer/CommandLineTools/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/main.dir/src/objects/Table.cpp.o -c "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp"
 
 CMakeFiles/main.dir/src/objects/Table.cpp.i: cmake_force
@@ -255,8 +303,10 @@ main_OBJECTS = \
 "CMakeFiles/main.dir/src/framework/Display.cpp.o" \
 "CMakeFiles/main.dir/src/framework/Matrix.cpp.o" \
 "CMakeFiles/main.dir/src/framework/Renderer.cpp.o" \
+"CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o" \
 "CMakeFiles/main.dir/src/gamestates/Playing.cpp.o" \
 "CMakeFiles/main.dir/src/objects/Card.cpp.o" \
+"CMakeFiles/main.dir/src/objects/Deck.cpp.o" \
 "CMakeFiles/main.dir/src/objects/Object.cpp.o" \
 "CMakeFiles/main.dir/src/objects/Table.cpp.o"
 
@@ -267,13 +317,15 @@ main: CMakeFiles/main.dir/src/main.cpp.o
 main: CMakeFiles/main.dir/src/framework/Display.cpp.o
 main: CMakeFiles/main.dir/src/framework/Matrix.cpp.o
 main: CMakeFiles/main.dir/src/framework/Renderer.cpp.o
+main: CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o
 main: CMakeFiles/main.dir/src/gamestates/Playing.cpp.o
 main: CMakeFiles/main.dir/src/objects/Card.cpp.o
+main: CMakeFiles/main.dir/src/objects/Deck.cpp.o
 main: CMakeFiles/main.dir/src/objects/Object.cpp.o
 main: CMakeFiles/main.dir/src/objects/Table.cpp.o
 main: CMakeFiles/main.dir/build.make
 main: CMakeFiles/main.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable main"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir="/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_11) "Linking CXX executable main"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/main.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -285,8 +337,10 @@ CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/main.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/framework/Display.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/framework/Matrix.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/framework/Renderer.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/gamestates/Playing.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/objects/Card.cpp.o.requires
+CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/objects/Deck.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/objects/Object.cpp.o.requires
 CMakeFiles/main.dir/requires: CMakeFiles/main.dir/src/objects/Table.cpp.o.requires
 

@@ -8,7 +8,9 @@
 #include <GL/glew.h>
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_image.h>
+
 #include "framework/Glm_common.h"
+#include "framework/Tex_Atlas.h"
 
 enum RENDER_TYPE {COLOR, TEXTURE};
 
@@ -18,6 +20,8 @@ class Object {
 
     virtual void update() = 0;
     virtual void render() = 0;
+    
+    virtual void setupUVs() = 0;
     
     void bind() { glBindVertexArray(vao); }
     
@@ -36,9 +40,9 @@ class Object {
     
     std::vector<glm::vec3> rel_mesh;
     
-    Object(float _x, float _y, float _z, GLuint programID, RENDER_TYPE r_type);
+    Object(float _x, float _y, float _z, RENDER_TYPE r_type);
     
-    void setupGL(GLuint programID);
+    void setupGL();
 };
 
 #endif

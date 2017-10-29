@@ -2,64 +2,48 @@
 
 #include "objects/Card.h"
 
-Card::Card(float _x, float _y, float _z, GLuint programID)
-: Object(_x, _y, _z, programID, TEXTURE) {
-    float size = 0.25f*5;
+Card::Card(float _x, float _y, float _z, SUIT _suit, FACE _face)
+: Object(_x, _y, _z, TEXTURE)
+, suit(_suit)
+, face(_face) {
+    float size = 0.25f;
     rel_mesh = {
-        glm::vec3(size/2 * 0.7,  0,  size/2),
-        glm::vec3(-size/2 * 0.7,  0,  size/2),
-        glm::vec3(0.0,  0,  0),
+        // FRONT
+        glm::vec3(size/2 * 0.7,  0.0001,  size/2),
+        glm::vec3(-size/2 * 0.7,  0.0001,  size/2),
+        glm::vec3(0.0,  0.0001,  0),
 
-        glm::vec3(size/2 * 0.7,  0,  size/2),
-        glm::vec3(0,  0,  0),
-        glm::vec3(size/2 * 0.7, 0,  -size/2),
+        glm::vec3(size/2 * 0.7,  0.0001,  size/2),
+        glm::vec3(0,  0.0001,  0),
+        glm::vec3(size/2 * 0.7, 0.0001,  -size/2),
 
-        glm::vec3(-size/2 * 0.7, 0,  -size/2),
-        glm::vec3(size/2 * 0.7, 0,  -size/2),
-        glm::vec3(0.0,  0,  0),
+        glm::vec3(-size/2 * 0.7, 0.0001,  -size/2),
+        glm::vec3(size/2 * 0.7, 0.0001,  -size/2),
+        glm::vec3(0.0,  0.0001,  0),
 
-        glm::vec3(0,  0,  0),
-        glm::vec3(-size/2 * 0.7,  0,  size/2),
-        glm::vec3(-size/2 * 0.7, 0,  -size/2)
+        glm::vec3(0,  0.0001,  0),
+        glm::vec3(-size/2 * 0.7,  0.0001,  size/2),
+        glm::vec3(-size/2 * 0.7, 0.0001,  -size/2),
+        
+        // BACK
+        glm::vec3(size/2 * 0.7,  -0.0001,  size/2),
+        glm::vec3(-size/2 * 0.7,  -0.0001,  size/2),
+        glm::vec3(0.0,  -0.0001,  0),
+
+        glm::vec3(size/2 * 0.7,  -0.0001,  size/2),
+        glm::vec3(0,  -0.0001,  0),
+        glm::vec3(size/2 * 0.7, -0.0001,  -size/2),
+
+        glm::vec3(-size/2 * 0.7, -0.0001,  -size/2),
+        glm::vec3(size/2 * 0.7, -0.0001,  -size/2),
+        glm::vec3(0.0,  -0.0001,  0),
+
+        glm::vec3(0,  -0.0001,  0),
+        glm::vec3(-size/2 * 0.7,  -0.0001,  size/2),
+        glm::vec3(-size/2 * 0.7, -0.0001,  -size/2)
     };
     
-    uvs = {
-        glm::vec2(1, 1),
-        glm::vec2(0, 1),
-        glm::vec2(0.5, 0.5),
-        
-        glm::vec2(1, 1),
-        glm::vec2(0.5, 0.5),
-        glm::vec2(1, 0.0),
-        
-        glm::vec2(0.0, 0.0),
-        glm::vec2(1.0, 0.0),
-        glm::vec2(0.5, 0.5),
-        
-        glm::vec2(0.5, 0.5),
-        glm::vec2(0.0, 1.0),
-        glm::vec2(0.0, 0.0)
-    };
-    
-    colour = {
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0),
-        glm::vec4(0.0, 0.0, 1.0, 1.0)
-    };
-    
-    setupGL(programID);
+    setupGL();
 }
 
 void Card::render() {
@@ -80,6 +64,44 @@ void Card::update() {
 
 void Card::cleanup() {
     
+}
+
+void Card::setupUVs() {
+    uvs = {
+        // FRONT
+        Tex_Atlas::mapUVs(face, suit, 1, 1),
+        Tex_Atlas::mapUVs(face, suit, 0, 1),
+        Tex_Atlas::mapUVs(face, suit, 0.5, 0.5),
+        
+        Tex_Atlas::mapUVs(face, suit, 1, 1),
+        Tex_Atlas::mapUVs(face, suit, 0.5, 0.5),
+        Tex_Atlas::mapUVs(face, suit, 1, 0.0),
+        
+        Tex_Atlas::mapUVs(face, suit, 0.0, 0.0),
+        Tex_Atlas::mapUVs(face, suit, 1.0, 0.0),
+        Tex_Atlas::mapUVs(face, suit, 0.5, 0.5),
+        
+        Tex_Atlas::mapUVs(face, suit, 0.5, 0.5),
+        Tex_Atlas::mapUVs(face, suit, 0.0, 1.0),
+        Tex_Atlas::mapUVs(face, suit, 0.0, 0.0),
+        
+        // BACK
+        Tex_Atlas::mapUVs(ACE, BACK, 1, 1),
+        Tex_Atlas::mapUVs(ACE, BACK, 0, 1),
+        Tex_Atlas::mapUVs(ACE, BACK, 0.5, 0.5),
+        
+        Tex_Atlas::mapUVs(ACE, BACK, 1, 1),
+        Tex_Atlas::mapUVs(ACE, BACK, 0.5, 0.5),
+        Tex_Atlas::mapUVs(ACE, BACK, 1, 0.0),
+        
+        Tex_Atlas::mapUVs(ACE, BACK, 0.0, 0.0),
+        Tex_Atlas::mapUVs(ACE, BACK, 1.0, 0.0),
+        Tex_Atlas::mapUVs(ACE, BACK, 0.5, 0.5),
+        
+        Tex_Atlas::mapUVs(ACE, BACK, 0.5, 0.5),
+        Tex_Atlas::mapUVs(ACE, BACK, 0.0, 1.0),
+        Tex_Atlas::mapUVs(ACE, BACK, 0.0, 0.0)
+    };
 }
 
 void Card::glide(glm::vec3 new_pos, glm::vec3 new_rot, int ticks) {

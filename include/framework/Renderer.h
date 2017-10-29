@@ -15,10 +15,10 @@ class Renderer {
     Renderer();
     Renderer(const std::string &vertShader, const std::string &fragShader);
     
-    void activate();
+    void activate() const;
     GLuint getProgramID() { return programID; }
     
-    void loadMVP(const glm::mat4 &mvp);
+    void loadMVP(const glm::mat4 &mvp) const;
     void loadColour(const glm::vec4 &colour);
     
  private:

@@ -204,6 +204,33 @@ src/framework/Renderer.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Renderer.cpp.s
 .PHONY : src/framework/Renderer.cpp.s
 
+src/framework/Tex_Atlas.o: src/framework/Tex_Atlas.cpp.o
+
+.PHONY : src/framework/Tex_Atlas.o
+
+# target to build an object file
+src/framework/Tex_Atlas.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o
+.PHONY : src/framework/Tex_Atlas.cpp.o
+
+src/framework/Tex_Atlas.i: src/framework/Tex_Atlas.cpp.i
+
+.PHONY : src/framework/Tex_Atlas.i
+
+# target to preprocess a source file
+src/framework/Tex_Atlas.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.i
+.PHONY : src/framework/Tex_Atlas.cpp.i
+
+src/framework/Tex_Atlas.s: src/framework/Tex_Atlas.cpp.s
+
+.PHONY : src/framework/Tex_Atlas.s
+
+# target to generate assembly for a file
+src/framework/Tex_Atlas.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.s
+.PHONY : src/framework/Tex_Atlas.cpp.s
+
 src/gamestates/Playing.o: src/gamestates/Playing.cpp.o
 
 .PHONY : src/gamestates/Playing.o
@@ -285,6 +312,33 @@ src/objects/Card.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Card.cpp.s
 .PHONY : src/objects/Card.cpp.s
 
+src/objects/Deck.o: src/objects/Deck.cpp.o
+
+.PHONY : src/objects/Deck.o
+
+# target to build an object file
+src/objects/Deck.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Deck.cpp.o
+.PHONY : src/objects/Deck.cpp.o
+
+src/objects/Deck.i: src/objects/Deck.cpp.i
+
+.PHONY : src/objects/Deck.i
+
+# target to preprocess a source file
+src/objects/Deck.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Deck.cpp.i
+.PHONY : src/objects/Deck.cpp.i
+
+src/objects/Deck.s: src/objects/Deck.cpp.s
+
+.PHONY : src/objects/Deck.s
+
+# target to generate assembly for a file
+src/objects/Deck.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Deck.cpp.s
+.PHONY : src/objects/Deck.cpp.s
+
 src/objects/Object.o: src/objects/Object.cpp.o
 
 .PHONY : src/objects/Object.o
@@ -357,6 +411,9 @@ help:
 	@echo "... src/framework/Renderer.o"
 	@echo "... src/framework/Renderer.i"
 	@echo "... src/framework/Renderer.s"
+	@echo "... src/framework/Tex_Atlas.o"
+	@echo "... src/framework/Tex_Atlas.i"
+	@echo "... src/framework/Tex_Atlas.s"
 	@echo "... src/gamestates/Playing.o"
 	@echo "... src/gamestates/Playing.i"
 	@echo "... src/gamestates/Playing.s"
@@ -366,6 +423,9 @@ help:
 	@echo "... src/objects/Card.o"
 	@echo "... src/objects/Card.i"
 	@echo "... src/objects/Card.s"
+	@echo "... src/objects/Deck.o"
+	@echo "... src/objects/Deck.i"
+	@echo "... src/objects/Deck.s"
 	@echo "... src/objects/Object.o"
 	@echo "... src/objects/Object.i"
 	@echo "... src/objects/Object.s"

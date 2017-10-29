@@ -2,8 +2,8 @@
 
 #include "objects/Table.h"
 
-Table::Table(float _x, float _y, float _z, GLuint programID)
-: Object(_x, _y, _z, programID, COLOR) {
+Table::Table(float _x, float _y, float _z)
+: Object(_x, _y, _z, COLOR) {
     float len = 3;
     
     rel_mesh = {
@@ -83,7 +83,7 @@ Table::Table(float _x, float _y, float _z, GLuint programID)
         glm::vec4(0.35, 0.15, 0.15, 1.0)
     };
     
-    setupGL(programID);
+    setupGL();
 }
 
 void Table::render() {
