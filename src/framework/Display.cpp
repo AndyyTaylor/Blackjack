@@ -37,7 +37,7 @@ namespace Display {
         if (SDL_Init(SDL_INIT_VIDEO) < 0)
             return false;
 
-        window = SDL_CreateWindow("Role Playing Game",
+        window = SDL_CreateWindow("Blackjack",
                                   SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED,
                                   WIDTH, HEIGHT,
                                   SDL_WINDOW_OPENGL);

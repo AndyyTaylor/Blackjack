@@ -15,6 +15,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Deck.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/objects/Deck.cpp.o"
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Object.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/objects/Object.cpp.o"
   "/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/objects/Table.cpp.o"
+  "/Users/andytaylor/Google Drive/C++/BlackJack/src/ui/ImageOverlay.cpp" "/Users/andytaylor/Google Drive/C++/BlackJack/build/CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

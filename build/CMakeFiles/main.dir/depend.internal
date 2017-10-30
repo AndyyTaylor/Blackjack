@@ -32,6 +32,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o
  ../include/objects/Deck.h
  ../include/objects/Object.h
  ../include/objects/Table.h
+ ../include/ui/ImageOverlay.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/gamestates/Playing.cpp
 CMakeFiles/main.dir/src/main.cpp.o
  ../include/framework/Display.h
@@ -46,6 +47,7 @@ CMakeFiles/main.dir/src/main.cpp.o
  ../include/objects/Deck.h
  ../include/objects/Object.h
  ../include/objects/Table.h
+ ../include/ui/ImageOverlay.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/main.cpp
 CMakeFiles/main.dir/src/objects/Button.cpp.o
  ../include/framework/Glm_common.h
@@ -80,3 +82,10 @@ CMakeFiles/main.dir/src/objects/Table.cpp.o
  ../include/objects/Object.h
  ../include/objects/Table.h
  /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o
+ ../include/framework/Display.h
+ ../include/framework/Glm_common.h
+ ../include/framework/Tex_Atlas.h
+ ../include/objects/Object.h
+ ../include/ui/ImageOverlay.h
+ /Users/andytaylor/Google Drive/C++/BlackJack/src/ui/ImageOverlay.cpp

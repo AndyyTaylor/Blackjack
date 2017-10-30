@@ -7,6 +7,8 @@ Button::Button(float _x, float _y, float _z)
     image_file = "data/images/hit.png";
     
     float size = 0.25f;
+    width = size * 0.7 * 2;
+    height = size * 2;
     rel_mesh = {
         // FRONT
         glm::vec3(size/2 * 0.7,  0.0001,  size/2),
@@ -38,11 +40,24 @@ void Button::render() {
 }
 
 void Button::update() {
-    
+    if (new_hover != hover) {
+        hover = new_hover;
+        
+        if (!hover)
+            image_file = "data/images/hit.png";
+        else
+            image_file = "data/images/hit hover.png";
+
+        setupGL();
+    }
 }
 
 void Button::cleanup() {
     
+}
+
+void Button::setHover(bool _hover) {
+    new_hover = _hover;
 }
 
 void Button::setupUVs() {

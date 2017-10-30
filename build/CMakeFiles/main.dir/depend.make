@@ -31,6 +31,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Deck.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Table.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/ui/ImageOverlay.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../src/gamestates/Playing.cpp
 
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Display.h
@@ -45,6 +46,7 @@ CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Deck.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Table.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/ui/ImageOverlay.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
 
 CMakeFiles/main.dir/src/objects/Button.cpp.o: ../include/framework/Glm_common.h
@@ -79,4 +81,11 @@ CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/framework/Tex_Atlas.h
 CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/objects/Table.h
 CMakeFiles/main.dir/src/objects/Table.cpp.o: ../src/objects/Table.cpp
+
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o: ../include/framework/Display.h
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o: ../include/framework/Glm_common.h
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o: ../include/framework/Tex_Atlas.h
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o: ../include/ui/ImageOverlay.h
+CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o: ../src/ui/ImageOverlay.cpp
 

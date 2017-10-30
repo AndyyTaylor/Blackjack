@@ -93,6 +93,10 @@ objects/Deck.h
 ../include/gamestates/objects/Deck.h
 objects/Button.h
 ../include/gamestates/objects/Button.h
+ui/ImageOverlay.h
+../include/gamestates/ui/ImageOverlay.h
+iostream
+-
 
 ../include/objects/Button.h
 objects/Object.h
@@ -135,6 +139,10 @@ framework/Tex_Atlas.h
 ../include/objects/Table.h
 objects/Object.h
 ../include/objects/objects/Object.h
+
+../include/ui/ImageOverlay.h
+objects/Object.h
+../include/ui/objects/Object.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
 framework/Display.h
@@ -199,4 +207,10 @@ framework/stb_image.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp
 objects/Table.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Table.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/ui/ImageOverlay.cpp
+ui/ImageOverlay.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/ui/ui/ImageOverlay.h
+framework/Display.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/ui/framework/Display.h
 

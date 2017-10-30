@@ -7,13 +7,17 @@
 
 class Button : public Object {
  private:
+    bool hover, new_hover;
     
  public:
+    float width, height;
     Button(float _x, float _y, float _z);
     
     void render();
     void update();
     void cleanup();
+    
+    void setHover(bool _hover);
     
     void setupUVs();
 };

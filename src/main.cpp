@@ -15,7 +15,7 @@ int main(int argc, char** argv) {
         state.handleEvents();
         state.update();
         state.render();
-        Display::update();
+        // Display::update();  - I did a bullshit :(
     }
     
     std::cout << "Exiting..." << std::endl;

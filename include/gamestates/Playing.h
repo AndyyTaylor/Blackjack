@@ -9,10 +9,14 @@
 #include "objects/Table.h"
 #include "objects/Deck.h"
 #include "objects/Button.h"
+#include "ui/ImageOverlay.h"
+
+#include <iostream>
 
 class Playing : public GameState {
  private:
     Renderer colRenderer;
+    Renderer Tex2DRenderer;
     Renderer texRenderer;
     
     Card myCard;
@@ -20,7 +24,9 @@ class Playing : public GameState {
     Table table;
     Deck deck;
     
+    std::vector<Button> buttons;
     Button hitButton;
+    ImageOverlay crosshair;
     
     bool moving_right = false;
     bool moving_left = false;
@@ -38,6 +44,7 @@ class Playing : public GameState {
     void update();
     void render();
     
+    void checkMouse();
     void handleEvents();
 };
 

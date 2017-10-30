@@ -420,6 +420,33 @@ src/objects/Table.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Table.cpp.s
 .PHONY : src/objects/Table.cpp.s
 
+src/ui/ImageOverlay.o: src/ui/ImageOverlay.cpp.o
+
+.PHONY : src/ui/ImageOverlay.o
+
+# target to build an object file
+src/ui/ImageOverlay.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o
+.PHONY : src/ui/ImageOverlay.cpp.o
+
+src/ui/ImageOverlay.i: src/ui/ImageOverlay.cpp.i
+
+.PHONY : src/ui/ImageOverlay.i
+
+# target to preprocess a source file
+src/ui/ImageOverlay.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.i
+.PHONY : src/ui/ImageOverlay.cpp.i
+
+src/ui/ImageOverlay.s: src/ui/ImageOverlay.cpp.s
+
+.PHONY : src/ui/ImageOverlay.s
+
+# target to generate assembly for a file
+src/ui/ImageOverlay.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.s
+.PHONY : src/ui/ImageOverlay.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -462,6 +489,9 @@ help:
 	@echo "... src/objects/Table.o"
 	@echo "... src/objects/Table.i"
 	@echo "... src/objects/Table.s"
+	@echo "... src/ui/ImageOverlay.o"
+	@echo "... src/ui/ImageOverlay.i"
+	@echo "... src/ui/ImageOverlay.s"
 .PHONY : help
 
 

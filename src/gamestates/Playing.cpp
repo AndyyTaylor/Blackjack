@@ -8,13 +8,15 @@
 Playing::Playing()
 : GameState()
 , colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
+, Tex2DRenderer("data/shaders/2d/vert.glsl", "data/shaders/2d/frag.glsl")
 , texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
 , myCard(2, 0, 0, CLUB, NINE)
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , deck(0, 0, -0.5f, 1, 3)
-, hitButton(-0.3f, 0, 0.8f) {
-    
+, hitButton(-0.3f, 0, 0.8f)
+, crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
+    buttons.push_back(hitButton);
 }
 
 void Playing::cleanup() {}
@@ -52,6 +54,10 @@ void Playing::update() {
     myCard.update();
     
     deck.update();
+    
+    for (int i = 0; i < buttons.size(); i++) {
+        buttons[i].update();
+    }
 }
 
 void Playing::render() {
@@ -70,11 +76,35 @@ void Playing::render() {
     myCard.render();
     
     texRenderer.activate();
-    m = Maths::createModelMatrix(hitButton);
-    texRenderer.loadMVP(p * v * m);
-    hitButton.render();
+    for (int i = 0; i < buttons.size(); i++) {
+        m = Maths::createModelMatrix(buttons[i]);
+        texRenderer.loadMVP(p * v * m);
+        buttons[i].render();
+    }
     
     deck.render(p, v, texRenderer);
+    
+    Tex2DRenderer.activate();
+    m = Maths::createModelMatrix(crosshair);
+    crosshair.render();
+    
+    checkMouse();
+}
+
+void Playing::checkMouse() {
+    Display::update();
+    glFlush();
+    glFinish();
+
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
+    unsigned char data[4];
+    glReadPixels(Display::WIDTH/2, Display::HEIGHT/2, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
+    
+    buttons[0].setHover(false);
+    int id = static_cast<int>(data[0]);
+    if (id == 76) {
+        buttons[0].setHover(true);
+    }
 }
 
 void Playing::handleEvents() {
@@ -112,8 +142,8 @@ void Playing::handleEvents() {
                 moving_up = false;
             }
         } else if (event.type == SDL_MOUSEMOTION) {
-            cam.rotation.y += event.motion.xrel/3;  // MOUSE_SENSITIVITY
-            cam.rotation.x += event.motion.yrel/3;
+            cam.rotation.y += event.motion.xrel/5.0f;  // MOUSE_SENSITIVITY
+            cam.rotation.x += event.motion.yrel/5.0f;
         }
     }
 }
