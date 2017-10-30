@@ -25,7 +25,6 @@ class Playing : public GameState {
     Deck deck;
     
     std::vector<Button> buttons;
-    Button hitButton;
     ImageOverlay crosshair;
     
     bool moving_right = false;

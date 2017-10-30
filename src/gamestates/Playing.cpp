@@ -14,9 +14,9 @@ Playing::Playing()
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , deck(0, 0, -0.5f, 1, 3)
-, hitButton(-0.3f, 0, 0.8f)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
-    buttons.push_back(hitButton);
+    buttons.push_back(Button(-0.3f, 0, 0.8f, 76, "data/images/hit.png", "data/images/hit hover.png"));
+    buttons.push_back(Button(0.3f, 0, 0.8f, 77, "data/images/stand.png", "data/images/stand hover.png"));
 }
 
 void Playing::cleanup() {}
@@ -100,10 +100,12 @@ void Playing::checkMouse() {
     unsigned char data[4];
     glReadPixels(Display::WIDTH/2, Display::HEIGHT/2, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, data);
     
-    buttons[0].setHover(false);
     int id = static_cast<int>(data[0]);
-    if (id == 76) {
-        buttons[0].setHover(true);
+    for (int i = 0; i < buttons.size(); i++) {
+        buttons[i].setHover(false);
+        if (id == buttons[i].id) {
+            buttons[i].setHover(true);
+        }
     }
 }
 

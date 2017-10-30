@@ -2,9 +2,12 @@
 
 #include "objects/Button.h"
 
-Button::Button(float _x, float _y, float _z)
-: Object(_x, _y, _z, TEXTURE) {
-    image_file = "data/images/hit.png";
+Button::Button(float _x, float _y, float _z, int _id, std::string _file, std::string _hover_file)
+: Object(_x, _y, _z, TEXTURE)
+, file(_file)
+, hover_file(_hover_file)
+, id(_id) {
+    image_file = file;
     
     float size = 0.25f;
     width = size * 0.7 * 2;
@@ -44,9 +47,9 @@ void Button::update() {
         hover = new_hover;
         
         if (!hover)
-            image_file = "data/images/hit.png";
+            image_file = file;
         else
-            image_file = "data/images/hit hover.png";
+            image_file = hover_file;
 
         setupGL();
     }

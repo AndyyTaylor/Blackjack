@@ -10,8 +10,11 @@ class Button : public Object {
     bool hover, new_hover;
     
  public:
+    std::string file, hover_file;
     float width, height;
-    Button(float _x, float _y, float _z);
+    int id;
+    
+    Button(float _x, float _y, float _z, int _id, std::string _file, std::string hover_file);
     
     void render();
     void update();
