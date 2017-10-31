@@ -13,6 +13,8 @@
 
 #include <iostream>
 
+typedef void (*callback_function)(void);
+
 class Playing : public GameState {
  private:
     Renderer colRenderer;
@@ -45,6 +47,8 @@ class Playing : public GameState {
     
     void checkMouse();
     void handleEvents();
+    
+    void hit();
 };
 
 #endif

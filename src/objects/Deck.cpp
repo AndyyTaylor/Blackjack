@@ -2,7 +2,7 @@
 
 #include "objects/Deck.h"
 
-Deck::Deck(float _x, float _y, float _z, int num_decks, int _deck_height)
+Deck::Deck(float _x, float _y, float _z, int num_decks, float _deck_height)
 : x(_x)
 , y(_y)
 , z(_z)
@@ -22,7 +22,9 @@ void Deck::genCards(int num_decks) {
             for (int fint = ACE; fint != KING+1; fint++) {
                 FACE face = static_cast<FACE>(fint);
                 
-                cards.push_back(Card(x - (deck_height/2.0f) + (deck_height/(52.0f*num_decks))*cards.size(), y + 0.0001f*cards.size(), z, suit, face));
+                cards.push_back(Card(x, y + (deck_height/2.0f) - (deck_height/(52.0f*num_decks))*cards.size(), z, suit, face));
+                cards[cards.size()-1].rotation.z = 180;
+        // cards.push_back(Card(x - (deck_height/2.0f) + (deck_height/(52.0f*num_decks))*cards.size(), y + 0.0001f*cards.size(), z, suit, face));
             }
         }
     }
@@ -42,7 +44,7 @@ void Deck::render(const glm::mat4 &p, const glm::mat4 &v, const Renderer &texRen
 void Deck::update() {
     tick++;
     
-    if (tick == 0) shuffle();
+    /*if (tick == 0) shuffle();
     if ((tick / 3) > tipped) {
         int ind = tipped-1;
         if (tipped >= cards.size() + 1) ind = 52 - (ind - 52);
@@ -51,7 +53,7 @@ void Deck::update() {
                      , glm::vec3(0, 0, tipped >= cards.size() + 1 ? 180 : 0)
                      , 15);
         tipped += 1;
-    }
+    }*/
     
     for (int i = 0; i < cards.size(); i++) {
         cards[i].update();
@@ -60,6 +62,7 @@ void Deck::update() {
 
 void Deck::shuffle() {
     /* Durstenfeld's version of the Fisher-Yates shuffle O(n) complexity */
+    dealt = 0;
     for (int i = cards.size()-1; i >= 0; i--) {
         int j = (rand() % static_cast<int>(i + 1));    // NOLINT
         
@@ -69,6 +72,12 @@ void Deck::shuffle() {
     }
     
     for (int i = 0; i < cards.size(); i++) {
-        cards[i].position = glm::vec3(x - (deck_height/2.0f) + (1.0f*deck_height/(cards.size()))*i, y + 0.0001f*i, z);
+        cards[i].position = glm::vec3(x, y + (deck_height/2.0f) - (1.0f*deck_height/(cards.size()))*i, z);
+        cards[i].rotation.z = 180;
     }
+}
+
+void Deck::deal() {
+    cards[dealt].glide(glm::vec3(0.0f, 0, 0.8f), glm::vec3(0, 180, 0), 50);
+    dealt++;
 }

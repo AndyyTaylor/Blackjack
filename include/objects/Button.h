@@ -5,14 +5,16 @@
 
 #include "objects/Object.h"
 
+
 class Button : public Object {
  private:
-    bool hover, new_hover;
+    bool new_hover;
     
  public:
     std::string file, hover_file;
     float width, height;
     int id;
+    bool hover;
     
     Button(float _x, float _y, float _z, int _id, std::string _file, std::string hover_file);
     

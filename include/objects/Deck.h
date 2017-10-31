@@ -14,19 +14,22 @@
 class Deck {
  private:
     float x, y, z;
-    int deck_height;
+    float deck_height;
     int tick = 0;
     int tipped = 0;
+    int dealt = 0;
     
     void genCards(int num_decks);
-    void shuffle();
     
  public:
-    Deck(float _x, float _y, float _z, int num_decks, int _deck_height);
+    Deck(float _x, float _y, float _z, int num_decks, float _deck_height);
     std::vector<Card> cards;
     
     void update();
     void render(const glm::mat4& p, const glm::mat4& v, const Renderer& texRenderer);
+    
+    void deal();
+    void shuffle();
 };
 
 #endif

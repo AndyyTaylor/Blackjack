@@ -10,10 +10,10 @@ Playing::Playing()
 , colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
 , Tex2DRenderer("data/shaders/2d/vert.glsl", "data/shaders/2d/frag.glsl")
 , texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
-, myCard(2, 0, 0, CLUB, NINE)
+, myCard(1.5f, 0, 0, CLUB, NINE)
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
-, deck(0, 0, -0.5f, 1, 3)
+, deck(-0.3f, 0.04f, -0.0f, 1, 0.08f)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
     buttons.push_back(Button(-0.3f, 0, 0.8f, 76, "data/images/hit.png", "data/images/hit hover.png"));
     buttons.push_back(Button(0.3f, 0, 0.8f, 77, "data/images/stand.png", "data/images/stand hover.png"));
@@ -46,7 +46,7 @@ void Playing::update() {
         cam.position.y -= speed;
     }
     
-    if (fabs(fabs(myCard.position.x) - 2) < 0.01f) {
+    if (fabs(fabs(myCard.position.x) - 1.5) < 0.01f) {
         myCard.glide(glm::vec3(-myCard.position.x, 0, 0)
                      , glm::vec3(0, myCard.rotation.y + (180*5 * (myCard.position.x/fabs(myCard.position.x)))
                      , 0), 100);
@@ -128,6 +128,20 @@ void Playing::handleEvents() {
                 moving_down = true;
             } else if (event.key.keysym.sym == SDLK_SPACE) {
                 moving_up = true;
+            } else if (event.key.keysym.sym == SDLK_PERIOD) {
+                int id = -1;
+                for (int i = 0; i < buttons.size(); i++) {
+                    if (buttons[i].hover) {
+                        id = buttons[i].id;
+                        break;
+                    }
+                }
+                
+                if (id == 76) {
+                    deck.deal();
+                } else {
+                    deck.shuffle();
+                }
             }
         }  else if (event.type == SDL_KEYUP) {
             if (event.key.keysym.sym == SDLK_COMMA) {
