@@ -95,6 +95,8 @@ objects/Button.h
 ../include/gamestates/objects/Button.h
 ui/ImageOverlay.h
 ../include/gamestates/ui/ImageOverlay.h
+objects/Player.h
+../include/gamestates/objects/Player.h
 iostream
 -
 
@@ -135,6 +137,12 @@ framework/Glm_common.h
 ../include/objects/framework/Glm_common.h
 framework/Tex_Atlas.h
 ../include/objects/framework/Tex_Atlas.h
+
+../include/objects/Player.h
+objects/Object.h
+../include/objects/objects/Object.h
+objects/Card.h
+../include/objects/objects/Card.h
 
 ../include/objects/Table.h
 objects/Object.h
@@ -203,6 +211,10 @@ objects/Object.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Object.h
 framework/stb_image.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/framework/stb_image.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Player.cpp
+objects/Player.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/objects/objects/Player.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/objects/Table.cpp
 objects/Table.h

@@ -393,6 +393,33 @@ src/objects/Object.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Object.cpp.s
 .PHONY : src/objects/Object.cpp.s
 
+src/objects/Player.o: src/objects/Player.cpp.o
+
+.PHONY : src/objects/Player.o
+
+# target to build an object file
+src/objects/Player.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Player.cpp.o
+.PHONY : src/objects/Player.cpp.o
+
+src/objects/Player.i: src/objects/Player.cpp.i
+
+.PHONY : src/objects/Player.i
+
+# target to preprocess a source file
+src/objects/Player.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Player.cpp.i
+.PHONY : src/objects/Player.cpp.i
+
+src/objects/Player.s: src/objects/Player.cpp.s
+
+.PHONY : src/objects/Player.s
+
+# target to generate assembly for a file
+src/objects/Player.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/objects/Player.cpp.s
+.PHONY : src/objects/Player.cpp.s
+
 src/objects/Table.o: src/objects/Table.cpp.o
 
 .PHONY : src/objects/Table.o
@@ -486,6 +513,9 @@ help:
 	@echo "... src/objects/Object.o"
 	@echo "... src/objects/Object.i"
 	@echo "... src/objects/Object.s"
+	@echo "... src/objects/Player.o"
+	@echo "... src/objects/Player.i"
+	@echo "... src/objects/Player.s"
 	@echo "... src/objects/Table.o"
 	@echo "... src/objects/Table.i"
 	@echo "... src/objects/Table.s"

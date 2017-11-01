@@ -14,7 +14,8 @@ Playing::Playing()
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , deck(-0.3f, 0.04f, -0.0f, 1, 0.08f)
-, crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
+, crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png")
+, player(0, 0, 3, 0.15f, 0, 0.8f, 0.2f) {
     buttons.push_back(Button(-0.3f, 0, 0.8f, 76, "data/images/hit.png", "data/images/hit hover.png"));
     buttons.push_back(Button(0.3f, 0, 0.8f, 77, "data/images/stand.png", "data/images/stand hover.png"));
 }
@@ -138,8 +139,9 @@ void Playing::handleEvents() {
                 }
                 
                 if (id == 76) {
-                    deck.deal();
+                    player.addCard(deck.deal());
                 } else {
+                    player.clearHand();
                     deck.shuffle();
                 }
             }

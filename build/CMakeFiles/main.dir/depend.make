@@ -30,6 +30,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Button.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Deck.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Player.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/objects/Table.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/ui/ImageOverlay.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../src/gamestates/Playing.cpp
@@ -45,6 +46,7 @@ CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Button.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Card.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Deck.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Player.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/objects/Table.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/ui/ImageOverlay.h
 CMakeFiles/main.dir/src/main.cpp.o: ../src/main.cpp
@@ -75,6 +77,13 @@ CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/framework/Tex_Atlas.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/framework/stb_image.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../include/objects/Object.h
 CMakeFiles/main.dir/src/objects/Object.cpp.o: ../src/objects/Object.cpp
+
+CMakeFiles/main.dir/src/objects/Player.cpp.o: ../include/framework/Glm_common.h
+CMakeFiles/main.dir/src/objects/Player.cpp.o: ../include/framework/Tex_Atlas.h
+CMakeFiles/main.dir/src/objects/Player.cpp.o: ../include/objects/Card.h
+CMakeFiles/main.dir/src/objects/Player.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/objects/Player.cpp.o: ../include/objects/Player.h
+CMakeFiles/main.dir/src/objects/Player.cpp.o: ../src/objects/Player.cpp
 
 CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/framework/Glm_common.h
 CMakeFiles/main.dir/src/objects/Table.cpp.o: ../include/framework/Tex_Atlas.h

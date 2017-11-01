@@ -77,7 +77,7 @@ void Deck::shuffle() {
     }
 }
 
-void Deck::deal() {
-    cards[dealt].glide(glm::vec3(0.0f, 0, 0.8f), glm::vec3(0, 180, 0), 50);
-    dealt++;
+Card* Deck::deal() {
+    return &cards[dealt++];
+    // cards[dealt].glide(glm::vec3(0.0f, 0, 0.8f), glm::vec3(0, 180, 0), 50);
 }

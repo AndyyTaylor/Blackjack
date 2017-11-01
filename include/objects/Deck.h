@@ -28,7 +28,7 @@ class Deck {
     void update();
     void render(const glm::mat4& p, const glm::mat4& v, const Renderer& texRenderer);
     
-    void deal();
+    Card* deal();
     void shuffle();
 };
 

@@ -9,6 +9,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/objects/Card.cpp.o"
   "CMakeFiles/main.dir/src/objects/Deck.cpp.o"
   "CMakeFiles/main.dir/src/objects/Object.cpp.o"
+  "CMakeFiles/main.dir/src/objects/Player.cpp.o"
   "CMakeFiles/main.dir/src/objects/Table.cpp.o"
   "CMakeFiles/main.dir/src/ui/ImageOverlay.cpp.o"
   "main.pdb"

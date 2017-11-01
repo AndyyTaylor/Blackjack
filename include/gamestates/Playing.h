@@ -10,6 +10,7 @@
 #include "objects/Deck.h"
 #include "objects/Button.h"
 #include "ui/ImageOverlay.h"
+#include "objects/Player.h"
 
 #include <iostream>
 
@@ -25,6 +26,7 @@ class Playing : public GameState {
     Card cam;   // TODO
     Table table;
     Deck deck;
+    Player player;
     
     std::vector<Button> buttons;
     ImageOverlay crosshair;
