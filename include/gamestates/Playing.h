@@ -21,35 +21,34 @@ class Playing : public GameState {
     Renderer colRenderer;
     Renderer Tex2DRenderer;
     Renderer texRenderer;
-    
+
     Card myCard;
     Card cam;   // TODO
     Table table;
     Deck deck;
-    Player player;
-    
+
     std::vector<Button> buttons;
     ImageOverlay crosshair;
-    
+
     bool moving_right = false;
     bool moving_left = false;
     bool moving_forward = false;
     bool moving_backward = false;
     bool moving_up = false;
     bool moving_down = false;
-    
+
  public:
     Playing();
-    
+
     void init();
     void cleanup();
-    
+
     void update();
     void render();
-    
+
     void checkMouse();
     void handleEvents();
-    
+
     void hit();
 };
 

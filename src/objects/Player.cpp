@@ -2,19 +2,18 @@
 
 #include "objects/Player.h"
 
-Player::Player(float _x, float _y, float _z, float _hx, float _hy, float _hz, float _hw)
-: Object(_x, _y, _z, TEXTURE)
-, hand_pos(_hx, _hy, _hz)
+Player::Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, float _hw)
+: Object(_player_pos.x, _player_pos.y, _player_pos.z, TEXTURE)
+, hand_pos(_hand_pos)
 , hand_width(_hw) {
-    
 }
 
 void Player::render() {
-    
+
 }
 
 void Player::update() {
-    
+
 }
 
 void Player::addCard(Card* c) {
@@ -31,9 +30,9 @@ void Player::clearHand() {
 }
 
 void Player::cleanup() {
-    
+
 }
 
 void Player::setupUVs() {
-    
+
 }

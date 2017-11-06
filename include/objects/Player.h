@@ -11,19 +11,18 @@ class Player : public Object {      // Would like to put models there eventually
     std::vector<Card*> cards;
     glm::vec3 hand_pos;
     float hand_width;
-    
+
  public:
-    Player(float _x, float _y, float _z, float _hx, float _hy, float _hz, float _hw);
-    
+    Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, float _hw);
+
     void render();
     void update();
     void cleanup();
-    
+
     void addCard(Card* c);
     void clearHand();
-    
-    void setupUVs();
 
+    void setupUVs();
 };
 
 #endif
