@@ -10,10 +10,10 @@ Playing::Playing()
 , colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
 , Tex2DRenderer("data/shaders/2d/vert.glsl", "data/shaders/2d/frag.glsl")
 , texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
+, game(2, 100)
 , myCard(1.5f, 0, 0, CLUB, NINE)
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
-, deck(-0.3f, 0.04f, -0.0f, 1, 0.08f)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
     buttons.push_back(Button(-0.3f, 0, 0.8f, 76, "data/images/hit.png", "data/images/hit hover.png"));
     buttons.push_back(Button(0.3f, 0, 0.8f, 77, "data/images/stand.png", "data/images/stand hover.png"));
@@ -23,6 +23,8 @@ void Playing::cleanup() {}
 
 void Playing::update() {
     float speed = 0.03f;
+    tick++;
+
     if (moving_forward) {
         cam.position.x -= cos(glm::radians(cam.rotation.y + 90)) * speed;
         cam.position.z -= sin(glm::radians(cam.rotation.y + 90)) * speed;
@@ -53,7 +55,7 @@ void Playing::update() {
     }
     myCard.update();
 
-    deck.update();
+    game.update(tick);
 
     for (int i = 0; i < buttons.size(); i++) {
         buttons[i].update();
@@ -82,7 +84,7 @@ void Playing::render() {
         buttons[i].render();
     }
 
-    deck.render(p, v, texRenderer);
+    game.render(p, v, texRenderer);
 
     Tex2DRenderer.activate();
     m = Maths::createModelMatrix(crosshair);
@@ -138,10 +140,10 @@ void Playing::handleEvents() {
                 }
 
                 if (id == 76) {
-                    player.addCard(deck.deal());
+                    // player.addCard(deck.deal());
                 } else {
-                    player.clearHand();
-                    deck.shuffle();
+                    // player.clearHand();
+                    // deck.shuffle();
                 }
             }
         }  else if (event.type == SDL_KEYUP) {

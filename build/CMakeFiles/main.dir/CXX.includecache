@@ -14,6 +14,14 @@ SDL2/SDL.h
 iostream
 -
 
+../include/framework/Game.h
+objects/Player.h
+../include/framework/objects/Player.h
+objects/Deck.h
+../include/framework/objects/Deck.h
+vector
+-
+
 ../include/framework/Glm_common.h
 GLM/glm.hpp
 -
@@ -97,6 +105,8 @@ ui/ImageOverlay.h
 ../include/gamestates/ui/ImageOverlay.h
 objects/Player.h
 ../include/gamestates/objects/Player.h
+framework/Game.h
+../include/gamestates/framework/Game.h
 iostream
 -
 
@@ -155,6 +165,10 @@ objects/Object.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Display.cpp
 framework/Display.h
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Display.h
+
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Game.cpp
+framework/Game.h
+/Users/andytaylor/Google Drive/C++/BlackJack/src/framework/framework/Game.h
 
 /Users/andytaylor/Google Drive/C++/BlackJack/src/framework/Matrix.cpp
 framework/Matrix.h

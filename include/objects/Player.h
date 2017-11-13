@@ -23,6 +23,8 @@ class Player : public Object {      // Would like to put models there eventually
     void clearHand();
 
     void setupUVs();
+
+    int getHandValue();
 };
 
 #endif

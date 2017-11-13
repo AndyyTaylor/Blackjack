@@ -9,11 +9,9 @@ Player::Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, float _hw)
 }
 
 void Player::render() {
-
 }
 
 void Player::update() {
-
 }
 
 void Player::addCard(Card* c) {
@@ -30,9 +28,29 @@ void Player::clearHand() {
 }
 
 void Player::cleanup() {
-
 }
 
 void Player::setupUVs() {
+}
 
+int Player::getHandValue() {
+    int total = 0;
+    int aces = 0;
+    for (int i = 0; i < cards.size(); i++) {
+        if (cards[i]->getValue() == 0) {
+            aces += 1;
+        } else {
+            total += cards[i]->getValue();
+        }
+    }
+
+    for (int i = 0; i < aces; i++) {
+        if (total <= 10) {
+            total += 11;
+        } else {
+            total += 1;
+        }
+    }
+
+    return total;
 }

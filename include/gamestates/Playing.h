@@ -11,6 +11,7 @@
 #include "objects/Button.h"
 #include "ui/ImageOverlay.h"
 #include "objects/Player.h"
+#include "framework/Game.h"
 
 #include <iostream>
 
@@ -22,10 +23,12 @@ class Playing : public GameState {
     Renderer Tex2DRenderer;
     Renderer texRenderer;
 
+    Game game;
     Card myCard;
     Card cam;   // TODO
     Table table;
-    Deck deck;
+
+    int tick = 0;
 
     std::vector<Button> buttons;
     ImageOverlay crosshair;

@@ -4,6 +4,17 @@
 CMakeFiles/main.dir/src/framework/Display.cpp.o: ../include/framework/Display.h
 CMakeFiles/main.dir/src/framework/Display.cpp.o: ../src/framework/Display.cpp
 
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/framework/Game.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/framework/Glm_common.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/framework/Matrix.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/framework/Renderer.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/framework/Tex_Atlas.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/objects/Card.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/objects/Deck.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/objects/Object.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../include/objects/Player.h
+CMakeFiles/main.dir/src/framework/Game.cpp.o: ../src/framework/Game.cpp
+
 CMakeFiles/main.dir/src/framework/Matrix.cpp.o: ../include/framework/Display.h
 CMakeFiles/main.dir/src/framework/Matrix.cpp.o: ../include/framework/Glm_common.h
 CMakeFiles/main.dir/src/framework/Matrix.cpp.o: ../include/framework/Matrix.h
@@ -20,6 +31,7 @@ CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o: ../include/framework/Tex_Atla
 CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o: ../src/framework/Tex_Atlas.cpp
 
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Display.h
+CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Game.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Glm_common.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Matrix.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/framework/Renderer.h
@@ -36,6 +48,7 @@ CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../include/ui/ImageOverlay.h
 CMakeFiles/main.dir/src/gamestates/Playing.cpp.o: ../src/gamestates/Playing.cpp
 
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Display.h
+CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Game.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Glm_common.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Matrix.h
 CMakeFiles/main.dir/src/main.cpp.o: ../include/framework/Renderer.h

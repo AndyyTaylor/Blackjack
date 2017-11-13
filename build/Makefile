@@ -150,6 +150,33 @@ src/framework/Display.cpp.s:
 	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Display.cpp.s
 .PHONY : src/framework/Display.cpp.s
 
+src/framework/Game.o: src/framework/Game.cpp.o
+
+.PHONY : src/framework/Game.o
+
+# target to build an object file
+src/framework/Game.cpp.o:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Game.cpp.o
+.PHONY : src/framework/Game.cpp.o
+
+src/framework/Game.i: src/framework/Game.cpp.i
+
+.PHONY : src/framework/Game.i
+
+# target to preprocess a source file
+src/framework/Game.cpp.i:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Game.cpp.i
+.PHONY : src/framework/Game.cpp.i
+
+src/framework/Game.s: src/framework/Game.cpp.s
+
+.PHONY : src/framework/Game.s
+
+# target to generate assembly for a file
+src/framework/Game.cpp.s:
+	$(MAKE) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/src/framework/Game.cpp.s
+.PHONY : src/framework/Game.cpp.s
+
 src/framework/Matrix.o: src/framework/Matrix.cpp.o
 
 .PHONY : src/framework/Matrix.o
@@ -486,6 +513,9 @@ help:
 	@echo "... src/framework/Display.o"
 	@echo "... src/framework/Display.i"
 	@echo "... src/framework/Display.s"
+	@echo "... src/framework/Game.o"
+	@echo "... src/framework/Game.i"
+	@echo "... src/framework/Game.s"
 	@echo "... src/framework/Matrix.o"
 	@echo "... src/framework/Matrix.i"
 	@echo "... src/framework/Matrix.s"

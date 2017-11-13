@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/main.dir/src/main.cpp.o"
   "CMakeFiles/main.dir/src/framework/Display.cpp.o"
+  "CMakeFiles/main.dir/src/framework/Game.cpp.o"
   "CMakeFiles/main.dir/src/framework/Matrix.cpp.o"
   "CMakeFiles/main.dir/src/framework/Renderer.cpp.o"
   "CMakeFiles/main.dir/src/framework/Tex_Atlas.cpp.o"

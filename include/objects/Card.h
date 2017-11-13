@@ -10,19 +10,21 @@ class Card : public Object {
     glm::vec3 dpos;
     glm::vec3 drot;
     int glide_tick = 0;
-    
+
     SUIT suit;
     FACE face;
 
  public:
     Card(float _x, float _y, float _z, SUIT _suit, FACE _face);
-    
+
     void render();
     void update();
     void cleanup();
-    
+
     void setupUVs();
     void glide(glm::vec3 new_pos, glm::vec3 new_rot, int ticks);
+
+    int getValue();
 };
 
 #endif
