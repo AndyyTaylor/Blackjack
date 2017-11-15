@@ -10,8 +10,7 @@ Playing::Playing()
 , colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
 , Tex2DRenderer("data/shaders/2d/vert.glsl", "data/shaders/2d/frag.glsl")
 , texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
-, game(2, 100)
-, myCard(1.5f, 0, 0, CLUB, NINE)
+, game(4, 10)
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
@@ -48,13 +47,6 @@ void Playing::update() {
         cam.position.y -= speed;
     }
 
-    if (fabs(fabs(myCard.position.x) - 1.5) < 0.01f) {
-        myCard.glide(glm::vec3(-myCard.position.x, 0, 0)
-                     , glm::vec3(0, myCard.rotation.y + (180*5 * (myCard.position.x/fabs(myCard.position.x)))
-                     , 0), 100);
-    }
-    myCard.update();
-
     game.update(tick);
 
     for (int i = 0; i < buttons.size(); i++) {
@@ -71,11 +63,6 @@ void Playing::render() {
     m = Maths::createModelMatrix(table);
     colRenderer.loadMVP(p * v * m);
     table.render();
-
-    texRenderer.activate();
-    m = Maths::createModelMatrix(myCard);
-    texRenderer.loadMVP(p * v * m);
-    myCard.render();
 
     texRenderer.activate();
     for (int i = 0; i < buttons.size(); i++) {
@@ -140,10 +127,9 @@ void Playing::handleEvents() {
                 }
 
                 if (id == 76) {
-                    // player.addCard(deck.deal());
+                    game.hit = true;
                 } else {
-                    // player.clearHand();
-                    // deck.shuffle();
+                    game.stand = true;
                 }
             }
         }  else if (event.type == SDL_KEYUP) {

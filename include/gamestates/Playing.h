@@ -24,7 +24,6 @@ class Playing : public GameState {
     Renderer texRenderer;
 
     Game game;
-    Card myCard;
     Card cam;   // TODO
     Table table;
 

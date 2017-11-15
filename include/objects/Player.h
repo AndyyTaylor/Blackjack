@@ -10,10 +10,13 @@ class Player : public Object {      // Would like to put models there eventually
  private:
     std::vector<Card*> cards;
     glm::vec3 hand_pos;
+    glm::vec3 hand_rot;
     float hand_width;
 
  public:
-    Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, float _hw);
+    Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, glm::vec3 _hand_rot, float _hw, int _playstyle);
+
+    int playstyle;
 
     void render();
     void update();
@@ -25,6 +28,8 @@ class Player : public Object {      // Would like to put models there eventually
     void setupUVs();
 
     int getHandValue();
+    bool isHuman();
+    bool shouldHit();
 };
 
 #endif
