@@ -48,6 +48,9 @@ class Game {
     void render(glm::mat4 p, glm::mat4 v, Renderer texRenderer);
 
     void nextPlayer();
+    void genPlayers();
+
+    void changePlayers(int inc);
 };
 
 #endif

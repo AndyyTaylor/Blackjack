@@ -4,18 +4,10 @@
 #include <iostream>
 
 Game::Game(int _num_players, int _turn_delay)
-: deck(-0.3f, 0.04f, -0.0f, 1, 0.08f)
+: deck(-0.0f, 0.04f, -0.4f, 1, 0.08f)
 , turn_delay(_turn_delay)
 , num_players(_num_players) {
-    for (int i = 0; i < floor((num_players - 2) / 2.0f); i++) {
-        players.push_back(Player(player_positions[i+1], hand_positions[i+1], hand_rots[i+1], 0.2f, 17));
-    }
-    players.push_back(Player(player_positions[0], hand_positions[0], hand_rots[0], 0.2f, 0));
-    for (int i = 0; i < ceil((num_players - 2) / 2.0f); i++) {
-        players.push_back(Player(player_positions[players.size()], hand_positions[players.size()], hand_rots[players.size()], 0.2f, 17));
-    }
-    players.push_back(Player(player_positions[hand_positions.size() - 1],
-        hand_positions[hand_positions.size() - 1], hand_rots[hand_positions.size() - 1], 0.2f, 17));
+    genPlayers();
 }
 
 void Game::update(int tick) {
@@ -50,4 +42,25 @@ void Game::nextPlayer() {
     if (++current_player >= players.size()) {
         current_player = 0;
     }
+}
+
+void Game::genPlayers() {
+    for (int i = 0; i < floor((num_players - 2) / 2.0f); i++) {
+        players.push_back(Player(player_positions[i+1], hand_positions[i+1], hand_rots[i+1], 0.2f, 17));
+    }
+    players.push_back(Player(player_positions[0], hand_positions[0], hand_rots[0], 0.2f, 0));
+    for (int i = 0; i < ceil((num_players - 2) / 2.0f); i++) {
+        players.push_back(Player(player_positions[players.size()], hand_positions[players.size()], hand_rots[players.size()], 0.2f, 17));
+    }
+    players.push_back(Player(player_positions[hand_positions.size() - 1],
+        hand_positions[hand_positions.size() - 1], hand_rots[hand_positions.size() - 1], 0.2f, 17));
+}
+
+void Game::changePlayers(int inc) {
+    players.clear();
+    num_players += inc;
+    genPlayers();
+    deck = Deck(-0.0f, 0.04f, -0.4f, 1, 0.08f);
+    current_player = 0;
+    cards_dealt = 0;
 }

@@ -10,10 +10,12 @@ Playing::Playing()
 , colRenderer("data/shaders/col/vert.glsl", "data/shaders/col/frag.glsl")
 , Tex2DRenderer("data/shaders/2d/vert.glsl", "data/shaders/2d/frag.glsl")
 , texRenderer("data/shaders/tex/vert.glsl", "data/shaders/tex/frag.glsl")
-, game(4, 10)
+, game(4, 20)
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
+    buttons.push_back(Button(0.3f, 0, 0.0f, 74, "data/images/+ player.png", "data/images/+ player hover.png"));
+    buttons.push_back(Button(-0.3f, 0, 0.0f, 75, "data/images/- player.png", "data/images/- player hover.png"));
     buttons.push_back(Button(-0.3f, 0, 0.8f, 76, "data/images/hit.png", "data/images/hit hover.png"));
     buttons.push_back(Button(0.3f, 0, 0.8f, 77, "data/images/stand.png", "data/images/stand hover.png"));
 }
@@ -126,9 +128,13 @@ void Playing::handleEvents() {
                     }
                 }
 
-                if (id == 76) {
+                if (id == 74) {
+                    game.changePlayers(1);
+                } else if (id == 75) {
+                    game.changePlayers(-1);
+                } else if (id == 76) {
                     game.hit = true;
-                } else {
+                } else if (id == 77) {
                     game.stand = true;
                 }
             }
