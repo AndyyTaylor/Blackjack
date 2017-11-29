@@ -49,6 +49,8 @@ Card::Card(float _x, float _y, float _z, SUIT _suit, FACE _face)
 }
 
 void Card::render() {
+    if (hidden) return;
+    
     glBindVertexArray(vao);
     glBindTexture(GL_TEXTURE_2D, TextureID);
     glEnable(GL_TEXTURE_2D);

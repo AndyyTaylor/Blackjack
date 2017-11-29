@@ -15,8 +15,10 @@ class Player : public Object {      // Would like to put models there eventually
 
  public:
     Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, glm::vec3 _hand_rot, float _hw, int _playstyle);
+    Player() {}
 
     int playstyle;
+    int money;
 
     void render();
     void update();

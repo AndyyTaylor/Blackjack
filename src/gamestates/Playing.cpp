@@ -14,10 +14,11 @@ Playing::Playing()
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
-    buttons.push_back(Button(0.3f, 0, 0.0f, 74, "data/images/+ player.png", "data/images/+ player hover.png"));
-    buttons.push_back(Button(-0.3f, 0, 0.0f, 75, "data/images/- player.png", "data/images/- player hover.png"));
-    buttons.push_back(Button(-0.3f, 0, 0.8f, 76, "data/images/hit.png", "data/images/hit hover.png"));
-    buttons.push_back(Button(0.3f, 0, 0.8f, 77, "data/images/stand.png", "data/images/stand hover.png"));
+    buttons.push_back(Button(0.3f, 0, 0.0f, 2, "data/images/+ player.png", "data/images/+ player hover.png"));
+    buttons.push_back(Button(-0.3f, 0, 0.0f, 1, "data/images/- player.png", "data/images/- player hover.png"));
+    buttons.push_back(Button(-0.4f, 0, 0.7f, 76, "data/images/hit.png", "data/images/hit hover.png"));
+    buttons.push_back(Button(0.4f, 0, 0.7f, 77, "data/images/stand.png", "data/images/stand hover.png"));
+    buttons.push_back(Button(0.0f, 0, 0.9f, 3, "data/images/start.png", "data/images/start hover.png"));
 }
 
 void Playing::cleanup() {}
@@ -61,9 +62,9 @@ void Playing::render() {
     glm::mat4 p = Maths::createProjMatrix();
     glm::mat4 m;
 
-    colRenderer.activate();
+    texRenderer.activate();
     m = Maths::createModelMatrix(table);
-    colRenderer.loadMVP(p * v * m);
+    texRenderer.loadMVP(p * v * m);
     table.render();
 
     texRenderer.activate();
@@ -119,6 +120,20 @@ void Playing::handleEvents() {
                 moving_down = true;
             } else if (event.key.keysym.sym == SDLK_SPACE) {
                 moving_up = true;
+            } else if (event.key.keysym.sym == SDLK_1) {
+                game.changePlaystyle(0);
+            } else if (event.key.keysym.sym == SDLK_2) {
+                game.changePlaystyle(1);
+            } else if (event.key.keysym.sym == SDLK_3) {
+                game.changePlaystyle(2);
+            } else if (event.key.keysym.sym == SDLK_4) {
+                game.changePlaystyle(3);
+            } else if (event.key.keysym.sym == SDLK_5) {
+                game.changePlaystyle(4);
+            } else if (event.key.keysym.sym == SDLK_6) {
+                game.changePlaystyle(5);
+            } else if (event.key.keysym.sym == SDLK_b) {
+                game.placeBet();
             } else if (event.key.keysym.sym == SDLK_PERIOD) {
                 int id = -1;
                 for (int i = 0; i < buttons.size(); i++) {
@@ -128,10 +143,12 @@ void Playing::handleEvents() {
                     }
                 }
 
-                if (id == 74) {
-                    game.changePlayers(1);
-                } else if (id == 75) {
-                    game.changePlayers(-1);
+                if (id == 2) {
+                    game.changeNumPlayers(1);
+                } else if (id == 1) {
+                    game.changeNumPlayers(-1);
+                } else if (id == 3) {
+                    game.roundStarted = true;
                 } else if (id == 76) {
                     game.hit = true;
                 } else if (id == 77) {

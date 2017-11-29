@@ -8,6 +8,7 @@ Player::Player(glm::vec3 _player_pos, glm::vec3 _hand_pos, glm::vec3 _hand_rot, 
 , hand_rot(_hand_rot)
 , hand_width(_hw)
 , playstyle(_playstyle) {
+    if (isHuman()) money = 1000;
 }
 
 void Player::render() {
@@ -27,6 +28,9 @@ void Player::addCard(Card* c) {
 }
 
 void Player::clearHand() {
+    for (int i = 0; i < cards.size(); i++) {
+        cards[i]->hidden = true;
+    }
     cards.clear();
 }
 

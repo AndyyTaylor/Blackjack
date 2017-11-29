@@ -4,35 +4,35 @@
 namespace Display {
     SDL_Window* window;
     bool open = true;
-    
+
     bool init() {
         if (!initSDL())
             return false;
-        
+
         initGL();
-        
+
         return true;
     }
-    
+
     void clear() {
-        glClearColor(0.53, 0.81, 0.92, 1.0);
+        glClearColor(0.41, 0.41, 0.41, 1.0);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     }
-    
+
     void update() {
         SDL_GL_SwapWindow(window);
     }
-    
+
     bool isOpen() {
         return open;
     }
-    
+
     void close() {
         open = false;
         SDL_DestroyWindow(window);
         SDL_Quit();
     }
-    
+
     bool initSDL() {
         if (SDL_Init(SDL_INIT_VIDEO) < 0)
             return false;
@@ -54,7 +54,7 @@ namespace Display {
 
         return true;
     }
-    
+
     void initGL() {
         glewExperimental = GL_TRUE;
         glewInit();

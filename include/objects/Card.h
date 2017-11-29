@@ -17,6 +17,8 @@ class Card : public Object {
  public:
     Card(float _x, float _y, float _z, SUIT _suit, FACE _face);
 
+    bool hidden = false;
+
     void render();
     void update();
     void cleanup();
