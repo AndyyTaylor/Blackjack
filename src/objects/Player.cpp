@@ -72,11 +72,11 @@ bool Player::isHuman() {
 bool Player::shouldHit() {
     for (int i = 0; i < cards.size(); i++) {
         if (cards[i]->glide_tick <= 0 && cards[i]->flipped) {
+            cards[i]->flipped = false;
             glm::vec3 rots = cards[i]->rotation;
             rots.z += 180;
             cards[i]->glide(cards[i]->position, rots, 50);
         }
-        cards[i]->flipped = false;
     }
     return getHandValue() < playstyle;
 }
