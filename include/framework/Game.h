@@ -17,6 +17,7 @@ class Game {
     int cards_dealt = 0;
     int num_players;
     int pot = 0;
+    int game_over_ticks = 0;
 
     std::vector<glm::vec3> hand_positions = {
         glm::vec3(0.15f, 0, 0.715f),

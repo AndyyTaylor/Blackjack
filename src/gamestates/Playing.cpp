@@ -18,7 +18,7 @@ Playing::Playing()
     buttons.push_back(Button(-0.3f, 0, 0.0f, 1, "data/images/- player.png", "data/images/- player hover.png"));
     buttons.push_back(Button(-0.4f, 0, 0.7f, 76, "data/images/hit.png", "data/images/hit hover.png"));
     buttons.push_back(Button(0.4f, 0, 0.7f, 77, "data/images/stand.png", "data/images/stand hover.png"));
-    buttons.push_back(Button(0.0f, 0, 0.9f, 3, "data/images/start.png", "data/images/start hover.png"));
+    buttons.push_back(Button(0.0f, 0, 0.4f, 3, "data/images/start.png", "data/images/start hover.png"));
 }
 
 void Playing::cleanup() {}

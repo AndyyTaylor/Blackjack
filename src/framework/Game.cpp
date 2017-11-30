@@ -20,12 +20,12 @@ void Game::update(int tick) {
             nextPlayer();
             cards_dealt++;
         } else if (players[current_player].isHuman()) {
-            if (hit) {
-                players[current_player].addCard(deck.deal());
-                hit = false;
-            } else if (stand) {
+            if (stand || players[current_player].getHandValue() > 21 || players[current_player].cards.size() == 5) {
                 stand = false;
                 nextPlayer();
+            } else if (hit) {
+                players[current_player].addCard(deck.deal());
+                hit = false;
             }
         } else if (players[current_player].shouldHit()) {
             players[current_player].addCard(deck.deal());
@@ -44,20 +44,32 @@ void Game::nextPlayer() {
         current_player = 0;
 
         if (cards_dealt >= num_players * 2) {
+            current_player = players.size()-1;
+            game_over_ticks++;
+            std::cout << game_over_ticks << std::endl;
+            if (game_over_ticks < 10) return;
+
             cards_dealt = 0;
             roundStarted = false;
 
             Player& human = getHumanPlayer();
             Player& dealer = players[num_players-1];
 
-            if (dealer.getHandValue() == human.getHandValue() || (dealer.getHandValue() > 21 && human.getHandValue() > 21)) {
+            if ((dealer.cards.size() == 5 && dealer.cards.size() == human.cards.size())
+                || dealer.getHandValue() == human.getHandValue() || (dealer.getHandValue() > 21 && human.getHandValue() > 21)) {
                 human.money += pot;
-            } else if (dealer.getHandValue() > 21 || human.getHandValue() > dealer.getHandValue()) {
+            } else if (human.getHandValue() <= 21
+                && (dealer.getHandValue() > 21 || human.getHandValue() > dealer.getHandValue() || human.cards.size() == 5)) {
                 human.money += 2*pot;
             }
             std::cout << "Current balance " << human.money << std::endl;
 
             pot = 0;
+            game_over_ticks = 0;
+
+            stand = false;
+            hit = false;
+            current_player = 0;
 
             for (int i = 0; i < players.size(); i++) {
                 players[i].clearHand();
@@ -112,7 +124,7 @@ void Game::placeBet() {
     if (roundStarted) return;
     Player& human = getHumanPlayer();
 
-    if (human.money > 20) {
+    if (human.money >= 20) {
         human.money -= 20;
         pot += 20;
     }
