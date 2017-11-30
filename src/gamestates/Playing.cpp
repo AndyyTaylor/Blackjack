@@ -135,7 +135,7 @@ void Playing::handleEvents() {
                 game.changePlaystyle(5);
             } else if (event.key.keysym.sym == SDLK_b) {
                 game.placeBet();
-            } else if (event.key.keysym.sym == SDLK_PERIOD) {
+            } else if (event.key.keysym.sym == SDLK_e) {
                 int id = -1;
                 for (int i = 0; i < buttons.size(); i++) {
                     if (buttons[i].hover) {
@@ -173,8 +173,8 @@ void Playing::handleEvents() {
                 moving_up = false;
             }
         } else if (event.type == SDL_MOUSEMOTION) {
-            cam.rotation.y += event.motion.xrel/5.0f;  // MOUSE_SENSITIVITY
-            cam.rotation.x += event.motion.yrel/5.0f;
+            cam.rotation.y += event.motion.xrel/10.0f;  // MOUSE_SENSITIVITY
+            cam.rotation.x += event.motion.yrel/10.0f;
         }
     }
 }
