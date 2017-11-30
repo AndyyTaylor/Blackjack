@@ -50,7 +50,7 @@ Card::Card(float _x, float _y, float _z, SUIT _suit, FACE _face)
 
 void Card::render() {
     if (hidden) return;
-    
+
     glBindVertexArray(vao);
     glBindTexture(GL_TEXTURE_2D, TextureID);
     glEnable(GL_TEXTURE_2D);
@@ -109,6 +109,8 @@ void Card::setupUVs() {
 }
 
 void Card::glide(glm::vec3 new_pos, glm::vec3 new_rot, int ticks) {
+    if (flipped) new_rot.z += 180;
+
     dpos = (new_pos - position) / glm::vec3(ticks, ticks, ticks);
     drot = (new_rot - rotation) / glm::vec3(ticks, ticks, ticks);
     glide_tick = ticks;

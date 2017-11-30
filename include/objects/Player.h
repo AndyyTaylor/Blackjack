@@ -25,7 +25,7 @@ class Player : public Object {      // Would like to put models there eventually
     void update();
     void cleanup();
 
-    void addCard(Card* c);
+    void addCard(Card* c, bool flip = false);
     void clearHand();
 
     void setupUVs();

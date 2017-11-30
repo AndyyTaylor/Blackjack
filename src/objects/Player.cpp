@@ -17,13 +17,16 @@ void Player::render() {
 void Player::update() {
 }
 
-void Player::addCard(Card* c) {
+void Player::addCard(Card* c, bool flip) {
+    if (flip) c->flipped = true;
     cards.push_back(c);
+
+    glm::vec3 card_rot = hand_rot;
 
     for (int i = 0; i < cards.size(); i++) {
         cards[i]->glide(hand_pos - glm::vec3(hand_width/2.0f + cos(glm::radians(hand_rot.y)) * (1.0f*hand_width/cards.size()*i), -0.00001f*i,
         -sin(glm::radians(hand_rot.y)) * (1.0f*hand_width/cards.size()*i))
-                       , hand_rot, 100);
+                       , card_rot, 100);
     }
 }
 
@@ -52,7 +55,7 @@ int Player::getHandValue() {
     }
 
     for (int i = 0; i < aces; i++) {
-        if (total <= 10) {
+        if (total <= 10 - aces) {
             total += 11;
         } else {
             total += 1;
@@ -67,5 +70,13 @@ bool Player::isHuman() {
 }
 
 bool Player::shouldHit() {
+    for (int i = 0; i < cards.size(); i++) {
+        if (cards[i]->glide_tick <= 0 && cards[i]->flipped) {
+            glm::vec3 rots = cards[i]->rotation;
+            rots.z += 180;
+            cards[i]->glide(cards[i]->position, rots, 50);
+        }
+        cards[i]->flipped = false;
+    }
     return getHandValue() < playstyle;
 }

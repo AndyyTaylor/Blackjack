@@ -5,10 +5,14 @@
 
 #include "gamestates/Playing.h"
 
+std::string PROJECT_PATH;  // NOLINT
 int main(int argc, char** argv) {
+    std::string s(argv[0]);
+    PROJECT_PATH = s.substr(0, s.length()-5);
+
     if (!Display::init())
         return -1;
-    
+
     Playing state;
     while (Display::isOpen()) {
         Display::clear();
@@ -17,7 +21,7 @@ int main(int argc, char** argv) {
         state.render();
         // Display::update();  - I did a bullshit :(
     }
-    
+
     std::cout << "Exiting..." << std::endl;
     return 0;
 }

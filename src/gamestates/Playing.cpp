@@ -14,11 +14,12 @@ Playing::Playing()
 , cam(0, 1, 5, CLUB, ACE)
 , table(0, -0.001f, 0)
 , crosshair(0.2, 0.2, 0.1, "data/images/crosshair.png") {
-    buttons.push_back(Button(0.3f, 0, 0.0f, 2, "data/images/+ player.png", "data/images/+ player hover.png"));
-    buttons.push_back(Button(-0.3f, 0, 0.0f, 1, "data/images/- player.png", "data/images/- player hover.png"));
+    buttons.push_back(Button(0.45f, 0, 0.0f, 2, "data/images/+ player.png", "data/images/+ player hover.png"));
+    buttons.push_back(Button(-0.45f, 0, 0.0f, 1, "data/images/- player.png", "data/images/- player hover.png"));
     buttons.push_back(Button(-0.4f, 0, 0.7f, 76, "data/images/hit.png", "data/images/hit hover.png"));
     buttons.push_back(Button(0.4f, 0, 0.7f, 77, "data/images/stand.png", "data/images/stand hover.png"));
-    buttons.push_back(Button(0.0f, 0, 0.4f, 3, "data/images/start.png", "data/images/start hover.png"));
+    buttons.push_back(Button(-0.15f, 0, 0.0f, 3, "data/images/start.png", "data/images/start hover.png"));
+    buttons.push_back(Button(0.15f, 0, 0.0f, 4, "data/images/split.png", "data/images/split hover.png"));
 }
 
 void Playing::cleanup() {}
@@ -108,13 +109,13 @@ void Playing::handleEvents() {
         if (event.type == SDL_QUIT || (event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_ESCAPE)) {
             Display::close();
         } else if (event.type == SDL_KEYDOWN) {
-            if (event.key.keysym.sym == SDLK_COMMA) {
+            if (event.key.keysym.sym == SDLK_w) {
                 moving_forward = true;
-            } else if (event.key.keysym.sym == SDLK_o) {
+            } else if (event.key.keysym.sym == SDLK_s) {
                 moving_backward = true;
             } else if (event.key.keysym.sym == SDLK_a) {
                 moving_left = true;
-            } else if (event.key.keysym.sym == SDLK_e) {
+            } else if (event.key.keysym.sym == SDLK_d) {
                 moving_right = true;
             } else if (event.key.keysym.sym == SDLK_LSHIFT) {
                 moving_down = true;
@@ -149,6 +150,8 @@ void Playing::handleEvents() {
                     game.changeNumPlayers(-1);
                 } else if (id == 3) {
                     game.roundStarted = true;
+                } else if (id == 4) {
+                    game.shouldSplit = true;
                 } else if (id == 76) {
                     game.hit = true;
                 } else if (id == 77) {
@@ -156,13 +159,13 @@ void Playing::handleEvents() {
                 }
             }
         }  else if (event.type == SDL_KEYUP) {
-            if (event.key.keysym.sym == SDLK_COMMA) {
+            if (event.key.keysym.sym == SDLK_w) {
                 moving_forward = false;
-            } else if (event.key.keysym.sym == SDLK_o) {
+            } else if (event.key.keysym.sym == SDLK_s) {
                 moving_backward = false;
             } else if (event.key.keysym.sym == SDLK_a) {
                 moving_left = false;
-            } else if (event.key.keysym.sym == SDLK_e) {
+            } else if (event.key.keysym.sym == SDLK_d) {
                 moving_right = false;
             } else if (event.key.keysym.sym == SDLK_LSHIFT) {
                 moving_down = false;

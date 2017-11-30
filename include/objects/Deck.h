@@ -17,17 +17,17 @@ class Deck {
     float deck_height;
     int tick = 0;
     int tipped = 0;
-    int dealt = 0;
-    
+
     void genCards(int num_decks);
-    
+
  public:
     Deck(float _x, float _y, float _z, int num_decks, float _deck_height);
     std::vector<Card> cards;
-    
+    int dealt = 0;
+
     void update();
     void render(const glm::mat4& p, const glm::mat4& v, const Renderer& texRenderer);
-    
+
     Card* deal();
     void shuffle();
 };

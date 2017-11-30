@@ -19,13 +19,16 @@ class Game {
     int pot = 0;
     int game_over_ticks = 0;
 
+    bool hasSplit = false;
+
     std::vector<glm::vec3> hand_positions = {
         glm::vec3(0.15f, 0, 0.715f),
         glm::vec3(1.78f, 0, -0.4f),
         glm::vec3(1.45f, 0, 0.25f),
         glm::vec3(-1.15f, 0, 0.35f),
         glm::vec3(-1.63f, 0, -0.4f),
-        glm::vec3(0.15f, 0, -0.715f)
+        glm::vec3(0.15f, 0, -0.715f),
+        glm::vec3(0.15f, 0, 0.3f)
     };
 
     std::vector<glm::vec3> player_positions = {
@@ -34,7 +37,8 @@ class Game {
         glm::vec3(-1.20f, 0, 0.35f),
         glm::vec3(-1.15f, 0, 0.35f),
         glm::vec3(-1.15f, 0, 0.35f),
-        glm::vec3(0.15f, 0, -0.715f)
+        glm::vec3(0.15f, 0, -0.715f),
+        glm::vec3(0.15f, 0, 0.5f)
     };
 
     std::vector<glm::vec3> hand_rots = {
@@ -43,6 +47,7 @@ class Game {
         glm::vec3(0, 45, 0),
         glm::vec3(0, -45, 0),
         glm::vec3(0, -90, 0),
+        glm::vec3(0, 0, 0),
         glm::vec3(0, 0, 0)
     };
 
@@ -52,6 +57,7 @@ class Game {
     bool hit = false;
     bool stand = false;
     bool roundStarted = false;
+    bool shouldSplit = false;
 
     void update(int tick);
     void render(glm::mat4 p, glm::mat4 v, Renderer texRenderer);
@@ -63,6 +69,7 @@ class Game {
     void changePlaystyle(int player);
 
     void placeBet();
+    void split();
 
     Player& getHumanPlayer();
 };

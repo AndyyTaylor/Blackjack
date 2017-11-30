@@ -9,15 +9,17 @@ class Card : public Object {
  private:
     glm::vec3 dpos;
     glm::vec3 drot;
-    int glide_tick = 0;
 
     SUIT suit;
-    FACE face;
 
  public:
     Card(float _x, float _y, float _z, SUIT _suit, FACE _face);
 
+    int glide_tick = 0;
+
     bool hidden = false;
+    bool flipped = false;
+    FACE face;
 
     void render();
     void update();

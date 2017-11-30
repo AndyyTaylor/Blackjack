@@ -16,16 +16,23 @@ void Game::update(int tick) {
 
     if (tick % turn_delay == 0 && roundStarted) {
         if (cards_dealt < num_players * 2) {
-            players[current_player].addCard(deck.deal());
+            if (current_player == num_players-1 && players[current_player].cards.size() == 0) {
+                players[current_player].addCard(deck.deal(), true);
+            } else {
+                players[current_player].addCard(deck.deal());
+            }
             nextPlayer();
             cards_dealt++;
-        } else if (players[current_player].isHuman()) {
+        } else if (players[current_player].isHuman() || players[current_player].playstyle == -1) {
             if (stand || players[current_player].getHandValue() > 21 || players[current_player].cards.size() == 5) {
                 stand = false;
                 nextPlayer();
             } else if (hit) {
                 players[current_player].addCard(deck.deal());
                 hit = false;
+            } else if (shouldSplit) {
+                split();
+                shouldSplit = false;
             }
         } else if (players[current_player].shouldHit()) {
             players[current_player].addCard(deck.deal());
@@ -54,6 +61,10 @@ void Game::nextPlayer() {
 
             Player& human = getHumanPlayer();
             Player& dealer = players[num_players-1];
+            if (hasSplit) {
+                dealer = players[num_players-2];
+            }
+
 
             if ((dealer.cards.size() == 5 && dealer.cards.size() == human.cards.size())
                 || dealer.getHandValue() == human.getHandValue() || (dealer.getHandValue() > 21 && human.getHandValue() > 21)) {
@@ -62,6 +73,24 @@ void Game::nextPlayer() {
                 && (dealer.getHandValue() > 21 || human.getHandValue() > dealer.getHandValue() || human.cards.size() == 5)) {
                 human.money += 2*pot;
             }
+
+            if (hasSplit) {
+                Player& splitHand = players[players.size()-1];
+                if ((dealer.cards.size() == 5 && dealer.cards.size() == splitHand.cards.size())
+                    || dealer.getHandValue() == splitHand.getHandValue() || (dealer.getHandValue() > 21 && splitHand.getHandValue() > 21)) {
+                    human.money += pot;
+                } else if (human.getHandValue() <= 21
+                    && (dealer.getHandValue() > 21 || splitHand.getHandValue() > dealer.getHandValue() || splitHand.cards.size() == 5)) {
+                    human.money += 2*pot;
+                } else {
+                    human.money -= pot;
+                }
+            }
+
+            if (deck.dealt < deck.cards.size()-20) {
+                deck = Deck(-0.0f, 0.04f, -0.4f, 1, 0.08f);
+            }
+
             std::cout << "Current balance " << human.money << std::endl;
 
             pot = 0;
@@ -69,6 +98,7 @@ void Game::nextPlayer() {
 
             stand = false;
             hit = false;
+            hasSplit = false;
             current_player = 0;
 
             for (int i = 0; i < players.size(); i++) {
@@ -86,8 +116,8 @@ void Game::genPlayers() {
     for (int i = 0; i < fmin(num_players-4, 2); i++) {
         players.push_back(Player(player_positions[players.size()], hand_positions[players.size()], hand_rots[players.size()], 0.2f, 17));
     }
-    players.push_back(Player(player_positions[hand_positions.size() - 1],
-        hand_positions[hand_positions.size() - 1], hand_rots[hand_positions.size() - 1], 0.2f, 17));
+    players.push_back(Player(player_positions[hand_positions.size() - 2],
+        hand_positions[hand_positions.size() - 2], hand_rots[hand_positions.size() - 2], 0.2f, 17));
 }
 
 void Game::changeNumPlayers(int inc) {
@@ -100,6 +130,7 @@ void Game::changeNumPlayers(int inc) {
     deck.shuffle();
     current_player = 0;
     cards_dealt = 0;
+    hasSplit = false;
 }
 
 void Game::changePlaystyle(int player) {
@@ -140,4 +171,22 @@ Player& Game::getHumanPlayer() {
         }
     }
     return players[0];
+}
+
+void Game::split() {
+    Player& human = getHumanPlayer();
+    if (human.cards.size() != 2 || hasSplit || human.money < pot) return;
+
+    if (human.cards[0]->face == human.cards[1]->face) {
+        hasSplit = true;
+
+        players.push_back(Player(player_positions[hand_positions.size() - 1],
+            hand_positions[hand_positions.size() - 1], hand_rots[hand_positions.size() - 1], 0.2f, -1));
+
+        human = getHumanPlayer();
+        Player& splitHand = players[players.size()-1];
+        splitHand.addCard(human.cards[1]);
+
+        getHumanPlayer().cards.pop_back();
+    }
 }
