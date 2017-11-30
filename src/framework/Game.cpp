@@ -89,6 +89,7 @@ void Game::nextPlayer() {
 
             if (deck.dealt < deck.cards.size()-20) {
                 deck = Deck(-0.0f, 0.04f, -0.4f, 1, 0.08f);
+                deck.shuffle();
             }
 
             std::cout << "Current balance " << human.money << std::endl;
