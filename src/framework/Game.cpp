@@ -132,6 +132,8 @@ void Game::changeNumPlayers(int inc) {
     current_player = 0;
     cards_dealt = 0;
     hasSplit = false;
+    hit = false;
+    stand = false;
 }
 
 void Game::changePlaystyle(int player) {
